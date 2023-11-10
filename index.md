@@ -29,11 +29,11 @@ The follow are the JSON representations for examples included with the package:
 
 * glTF "Shoe" Sample Model :
     <details><summary>JSON Graph</summary>
-        <img src='./images/MaterialsVariantsShoe.svg' width=100%>
+        <img src='https://kwokcb.github.io/materialxjson/images/MaterialsVariantsShoe.svg' width=100%>
     </details>
 * MaterialX "Standard Surface" material:
     <details><summary>JSON Graph</summary>
-        <img src='./images/standard_surface_default.svg' width=100%>
+        <img src='https://kwokcb.github.io/materialxjson/images/standard_surface_default.svg' width=100%>
     </details>
 
 
