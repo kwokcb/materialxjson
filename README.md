@@ -38,6 +38,6 @@ jsondump = json.dumps(doc_result, indent=2)
 fromdoc = mx.createDocument()
 mtlxjson.documentFromJSON(doc_result, fromdoc)
 
-#fromdoc = mtlxjson.load('test.json')
+# Write to XML string
 docstring = mx.writeToXmlString(fromdoc)
 ```

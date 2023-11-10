@@ -354,7 +354,7 @@ code {
 
 </style>
 
-<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.min.js"></script>
 </head>
 <body>
   <script>
@@ -393,7 +393,7 @@ jsondump = json.dumps(doc_result, indent=<span class="hljs-number">2</span>)
 fromdoc = mx.createDocument()
 mtlxjson.documentFromJSON(doc_result, fromdoc)
 
-<span class="hljs-comment">#fromdoc = mtlxjson.load('test.json')</span>
+<span class="hljs-comment"># Write to XML string</span>
 docstring = mx.writeToXmlString(fromdoc)
 </div></code></pre>
 

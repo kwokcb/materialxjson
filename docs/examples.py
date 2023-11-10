@@ -62,7 +62,9 @@ displaySource('Available data files', result, 'text', True)
 
 # %%
 import pkg_resources
+import MaterialX as mx
 from materialxjson import core
+from IPython.display import display_markdown
 
 # Create I/O handler
 mtlxjson = core.MaterialXJson()
@@ -85,7 +87,9 @@ displaySource('Document to JSON', jsondump, 'json', True)
 
 # %%
 import pkg_resources
+import MaterialX as mx
 from materialxjson import core
+from IPython.display import display_markdown
 
 # Create I/O handler
 mtlxjson = core.MaterialXJson()
@@ -108,7 +112,9 @@ displaySource('Document to JSON String (direct)', jsonString, 'json', False)
 
 # %%
 import pkg_resources
+import MaterialX as mx
 from materialxjson import core
+from IPython.display import display_markdown
 
 # Create I/O handler
 mtlxjson = core.MaterialXJson()
@@ -131,7 +137,9 @@ displaySource('XML from JSON', docstring, 'xml', True)
 
 # %%
 import pkg_resources
+import MaterialX as mx
 from materialxjson import core
+from IPython.display import display_markdown
 
 # Create I/O handler
 mtlxjson = core.MaterialXJson()
@@ -156,25 +164,33 @@ displaySource('XML from JSON String', docstring, 'xml', False)
 # This example shows the [gltf Sample Models "shoe" model](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/MaterialsVariantsShoe) read in XML format, and converted to JSON format. The sample mode was converted from gltf to MaterialX XML using the [gltf2MaterialX](https://github.com/kwokcb/materialxgltf/) converter. 
 
 # %%
+import pkg_resources
+import MaterialX as mx
+from materialxjson import core
+from IPython.display import display_markdown
+
+# Create I/O handler
+mtlxjson = core.MaterialXJson()
+
 # Load the MaterialX file
 mtlxFileName = pkg_resources.resource_filename('materialxjson', 'data/MaterialsVariantsShoe.gltf_converted.mtlx')
-mx.createDocument()
+doc = mx.createDocument()
 mx.readFromXmlFile(doc, mtlxFileName)
 xmlString = core.Util.documentToXMLString(doc)
 
 mtlxjson = core.MaterialXJson()
-jsontString = mtlxjson.documentToJSONString(doc, 2)
+jsonString = mtlxjson.documentToJSONString(doc, 2)
 
 xmlString = xmlString.replace('\n', '<br>')
 xmlString = xmlString.replace(' ', '&nbsp;&nbsp;')
 xmlString = xmlString.replace('\"', '\\"')
 jsonString = jsonString.replace('\n', '<br>')
-jsonString = jsonString.replace('  ', '&nbsp;&nbsp;')
+jsonString = jsonString.replace(' ', '&nbsp;&nbsp;')
 
-output = '| XML | JSON |\n'
+output = '| JSON Format | XML Format |\n'
 output = output + '| :--- | :--- |\n'
-output = output + '| ' + xmlString + '| ' + jsonString + '|\n'
-text = '<details><summary><b>XML / JSON Comparison</b></summary>\n\n' + output + '\n</details>\n'
+output = output + '| ' + jsonString + '| ' + xmlString + '|\n'
+text = '<details open><summary><b>JSON / XML Comparison</b></summary>\n\n' + output + '\n</details>\n'
 display_markdown(text, raw=True)
 
 
