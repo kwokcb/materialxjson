@@ -87,34 +87,70 @@ $(document).ready(function(){initNavTree('md__d___work_materialx_materialxjson__
 <div class="title">MaterialX JSON I/O </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This is a Python package for reading and writing MaterialX files in JSON format.</p>
+<div class="textblock"><p>This is a Python package for supporting interoperability of MaterialX documents by adding support conversion to / from a <code>JSON</code> representation.</p>
+<p>The <code>JSON</code> representation is lossless and is targeted at integrations which prefer to use <code>JSON</code> as a data exchange format instead of <code>XML</code>.</p>
 <h1><a class="anchor" id="autotoc_md4"></a>
+Documentation</h1>
+<p>For further information see the <b><a href="https://kwokcb.github.io/materialxjson/index.html">home page</a></b> for this package which includes links to API documentation and a Jupyter notebook with examples which expands on the basic <em>Usage</em> example.</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Installation</h1>
-<p>You can install the package via pip:</p>
+<p>The Python package is losted on <b><a href="https://pypi.org/project/materialxjson">PyPi</a></b> and can be installed using <code>pip</code>`:</p>
 <div class="fragment"><div class="line">pip install materialxjson</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+</div><!-- fragment --><p>or the <b><a href="https://github.com/kwokcb/materialxjson">source repository</a></b> can be cloned and the package built from the command line:</p>
+<div class="fragment"><div class="line">python -m build</div>
+</div><!-- fragment --><p>This will build a distribution folder called <code>dist</code> which contains a zip file which can be installed using:</p>
+<div class="fragment"><div class="line">pip --install &lt;name of zip&gt;</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
 Usage</h1>
-<div class="fragment"><div class="line">import MaterialX as mx</div>
+<p>The following example shows bidirectional conversion:</p>
+<ol type="1">
+<li>A MaterialX file in <code>XML</code> format is read in and written to a string in <code>JSON</code> format.</li>
+<li>A MaterialX file in <code>JSON</code> format is read in and written to a string in <code>XML</code> format.</li>
+</ol>
+<p>Note that any <code>JSON</code> package can be used to perform <code>JSON</code> I/O. The <code>json</code> package is used by the utilities provided in this package.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Package Setup</h2>
+<p>The <code>materialjson</code> package can be loaded as follows, along with MaterialX and json packages:</p>
+<div class="fragment"><div class="line">import json</div>
+<div class="line">import MaterialX as mx</div>
 <div class="line">from materialxjson import core</div>
-<div class="line">import json</div>
-</div><!-- fragment --><div class="fragment"><div class="line">import pkg_resources</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
+XML to JSON Format Conversion</h2>
+<p>A MaterialX document can be read in from an XML file as follows:</p>
+<div class="fragment"><div class="line">import pkg_resources</div>
 <div class="line"> </div>
 <div class="line"># Read in MaterialX file</div>
 <div class="line">mtlxFileName = pkg_resources.resource_filename(&#39;materialxjson&#39;, &#39;data/standard_surface_default.mtlx&#39;)</div>
-<div class="line">print(&#39;Using sample file: %s&#39; % mx.FilePath(mtlxFileName).getBaseName())</div>
+<div class="line"> </div>
 <div class="line">doc = mx.createDocument()</div>
 <div class="line">mx.readFromXmlFile(doc, mtlxFileName)</div>
-</div><!-- fragment --><div class="fragment"><div class="line"># Write to JSON format</div>
+</div><!-- fragment --><p>and then converted to JSON format as follows by creating a <code>MaterialXJson</code> object and calling the <code>documentToJSON</code> method:</p>
+<div class="fragment"><div class="line"># Create I/O handler</div>
 <div class="line">mtlxjson = core.MaterialXJson()</div>
-<div class="line">doc_result = mtlxjson.documentToJSON(doc)</div>
-<div class="line">jsondump = json.dumps(doc_result, indent=2)</div>
 <div class="line"> </div>
-<div class="line"># Read from JSON format</div>
-<div class="line">fromdoc = mx.createDocument()</div>
-<div class="line">mtlxjson.documentFromJSON(doc_result, fromdoc)</div>
+<div class="line"># Write to JSON format</div>
+<div class="line">jsonObject = mtlxjson.documentToJSON(doc)</div>
+</div><!-- fragment --><p>The contents of the JSON object can be extracted out using the <code>json</code> package as follows. (An indentation level of <code>2</code> is used to make the output more readable.)</p>
+<div class="fragment"><div class="line"># Convert JSON object to JSON string</div>
+<div class="line">jsonString = core.Util.jsonToJSONString(jsonObject, 2)</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+JSON to XML Format Conversion</h2>
+<p>A JSON file can be read in as follows. In this case we load the sample file included with the package:</p>
+<div class="fragment"><div class="line"># Get file to load</div>
+<div class="line">jsonFileName = pkg_resources.resource_filename(&#39;materialxjson&#39;, &#39;data/standard_surface_default_mtlx.json&#39;)</div>
 <div class="line"> </div>
-<div class="line">#fromdoc = mtlxjson.load(&#39;test.json&#39;)</div>
-<div class="line">docstring = mx.writeToXmlString(fromdoc)</div>
+<div class="line"># Load JSON file</div>
+<div class="line">jsonObject = core.Util.readJson(jsonFileName)</div>
+</div><!-- fragment --><p>The JSON object is then converted to a MaterialX document and written out to an XML string as follows:</p>
+<div class="fragment"><div class="line"># Create I/O handler</div>
+<div class="line">mtlxjson = core.MaterialXJson()</div>
+<div class="line"> </div>
+<div class="line"># Read JSON object into document</div>
+<div class="line">doc = mx.createDocument()</div>
+<div class="line">mtlxjson.documentFromJSON(jsonObject, doc)</div>
+<div class="line"> </div>
+<div class="line"># Write to XML String</div>
+<div class="line">docstring = core.Util.documentToXMLString(doc)</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

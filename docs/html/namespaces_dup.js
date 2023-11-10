@@ -1,8 +1,5 @@
 var namespaces_dup =
 [
-    [ "Documentation", "index.html#autotoc_md1", [
-      [ "Examples", "index.html#autotoc_md2", null ]
-    ] ],
     [ "materialxjson", null, [
       [ "core", null, [
         [ "MaterialXJson", "classmaterialxjson_1_1core_1_1_material_x_json.html", "classmaterialxjson_1_1core_1_1_material_x_json" ],

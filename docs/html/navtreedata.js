@@ -25,10 +25,16 @@
 var NAVTREE =
 [
   [ "MaterialXJSON", "index.html", [
-    [ "MaterialXglTF", "index.html", null ],
+    [ "Documentation", "index.html#autotoc_md1", null ],
+    [ "Examples", "index.html#autotoc_md2", null ],
     [ "MaterialX JSON I/O", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html", [
-      [ "Installation", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md4", null ],
-      [ "Usage", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md5", null ]
+      [ "Documentation", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "Installation", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md5", null ],
+      [ "Usage", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md6", [
+        [ "Package Setup", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md7", null ],
+        [ "XML to JSON Format Conversion", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md8", null ],
+        [ "JSON to XML Format Conversion", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md9", null ]
+      ] ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -50,7 +56,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-""
+"____init_____8py.html#ae441d0dadcbbbb90cb17996f845246ab"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -366,35 +366,74 @@ code {
     });
   </script>
 <h1 id="materialx-json-io">MaterialX JSON I/O</h1>
-<p>This is a Python package for reading and writing MaterialX files in JSON format.</p>
+<p>This is a Python package for supporting interoperability of  MaterialX documents by adding support conversion to / from a <code>JSON</code> representation.</p>
+<p>The <code>JSON</code> representation is lossless and is targeted at integrations which prefer to use <code>JSON</code> as a data exchange format instead of <code>XML</code>.</p>
+<h2 id="documentation">Documentation</h2>
+<p>For further information see the <strong><a href="https://kwokcb.github.io/materialxjson/index.html">home page</a></strong> for this package which includes links to API documentation and a Jupyter notebook with examples which expands on the basic <em>Usage</em> example.</p>
 <h2 id="installation">Installation</h2>
-<p>You can install the package via pip:</p>
+<p>The Python package is losted on <strong><a href="https://pypi.org/project/materialxjson">PyPi</a></strong> and can be installed<br>
+using `pip``:</p>
 <pre class="hljs"><code><div>pip install materialxjson
 </div></code></pre>
-<h2 id="usage">Usage</h2>
-<pre class="hljs"><code><div><span class="hljs-keyword">import</span> MaterialX <span class="hljs-keyword">as</span> mx
-<span class="hljs-keyword">from</span> materialxjson <span class="hljs-keyword">import</span> core
-<span class="hljs-keyword">import</span> json
+<p>or the <strong><a href="https://github.com/kwokcb/materialxjson">source repository</a></strong> can be cloned and the package built from the command line:</p>
+<pre class="hljs"><code><div>python -m build
 </div></code></pre>
+<p>This will build a distribution folder called <code>dist</code> which contains a zip file which can be installed using:</p>
+<pre class="hljs"><code><div>pip --install &lt;name of zip&gt;
+</div></code></pre>
+<h2 id="usage">Usage</h2>
+<p>The following example shows bidirectional conversion:</p>
+<ol>
+<li>A MaterialX file in <code>XML</code> format is read in and written to a string in <code>JSON</code> format.</li>
+<li>A MaterialX file in <code>JSON</code> format is read in and written to a string in <code>XML</code> format.</li>
+</ol>
+<p>Note that any <code>JSON</code> package can be used to perform <code>JSON</code> I/O. The <code>json</code> package is used by the utilities provided in this package.</p>
+<h3 id="package-setup">Package Setup</h3>
+<p>The <code>materialjson</code> package can be loaded as follows, along with MaterialX and json packages:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> json
+<span class="hljs-keyword">import</span> MaterialX <span class="hljs-keyword">as</span> mx
+<span class="hljs-keyword">from</span> materialxjson <span class="hljs-keyword">import</span> core
+</div></code></pre>
+<h3 id="xml-to-json-format-conversion">XML to JSON Format Conversion</h3>
+<p>A MaterialX document can be read in from an XML file as follows:</p>
 <pre class="hljs"><code><div><span class="hljs-keyword">import</span> pkg_resources
 
 <span class="hljs-comment"># Read in MaterialX file</span>
 mtlxFileName = pkg_resources.resource_filename(<span class="hljs-string">'materialxjson'</span>, <span class="hljs-string">'data/standard_surface_default.mtlx'</span>)
-print(<span class="hljs-string">'Using sample file: %s'</span> % mx.FilePath(mtlxFileName).getBaseName())
+
 doc = mx.createDocument()
 mx.readFromXmlFile(doc, mtlxFileName)
 </div></code></pre>
-<pre class="hljs"><code><div><span class="hljs-comment"># Write to JSON format</span>
+<p>and then converted to JSON format as follows by creating a <code>MaterialXJson</code> object and calling the <code>documentToJSON</code> method:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Create I/O handler</span>
 mtlxjson = core.MaterialXJson()
-doc_result = mtlxjson.documentToJSON(doc)
-jsondump = json.dumps(doc_result, indent=<span class="hljs-number">2</span>)
 
-<span class="hljs-comment"># Read from JSON format</span>
-fromdoc = mx.createDocument()
-mtlxjson.documentFromJSON(doc_result, fromdoc)
+<span class="hljs-comment"># Write to JSON format</span>
+jsonObject = mtlxjson.documentToJSON(doc)
+</div></code></pre>
+<p>The contents of the JSON object can be extracted out using the <code>json</code> package as follows. (An indentation level of <code>2</code> is<br>
+used to make the output more readable.)</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Convert JSON object to JSON string</span>
+jsonString = core.Util.jsonToJSONString(jsonObject, <span class="hljs-number">2</span>)
+</div></code></pre>
+<h3 id="json-to-xml-format-conversion">JSON to XML Format Conversion</h3>
+<p>A JSON file can be read in as follows. In this case we load the sample file included with the package:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Get file to load</span>
+jsonFileName = pkg_resources.resource_filename(<span class="hljs-string">'materialxjson'</span>, <span class="hljs-string">'data/standard_surface_default_mtlx.json'</span>)
 
-<span class="hljs-comment"># Write to XML string</span>
-docstring = mx.writeToXmlString(fromdoc)
+<span class="hljs-comment"># Load JSON file</span>
+jsonObject = core.Util.readJson(jsonFileName)
+</div></code></pre>
+<p>The JSON object is then converted to a MaterialX document and written out to an XML string as follows:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Create I/O handler</span>
+mtlxjson = core.MaterialXJson()
+
+<span class="hljs-comment"># Read JSON object into document</span>
+doc = mx.createDocument()
+mtlxjson.documentFromJSON(jsonObject, doc)
+
+<span class="hljs-comment"># Write to XML String</span>
+docstring = core.Util.documentToXMLString(doc)
 </div></code></pre>
 
 </body>
