@@ -1,12 +1,20 @@
 # MaterialX JSON I/O
 
+## Contents
+- [Introduction](#Introduction)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Documentation](#documentation)
+
+## Introduction
+
 This is a Python package for supporting interoperability of  MaterialX documents by adding support conversion to / from a `JSON` representation.
 
 The `JSON` representation is lossless and is targeted at integrations which prefer to use `JSON` as a data exchange format instead of `XML`.
 
 ## Documentation
 
-For further information see the **[home page](https://kwokcb.github.io/materialxjson/index.html)** for this package which includes links to API documentation and a Jupyter notebook with examples which expands on the basic *Usage* example.
+Visit the **[home page](https://kwokcb.github.io/materialxjson/index.html)** for For further information about this package, including links to API documentation and a Jupyter notebook with sample code that expands on the basic *Usage* example.
 
 ## Installation
 
@@ -105,3 +113,10 @@ mtlxjson.documentFromJSON(jsonObject, doc)
 # Write to XML String
 docstring = core.Util.documentToXMLString(doc)
 ```
+
+## Author
+
+- LinkedIn: <a href="https://www.linkedin.com/in/bernard-kwok/" target="_blank">Bernard Kwok</a>
+- GitHub: [kwokcb](https://github.com/kwokcb)
+- Email: <a href="mailto:kwokcb@gmail.com">kwokcb@gmail.com</a>
+
