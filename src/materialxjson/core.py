@@ -127,9 +127,9 @@ class MaterialXJson:
             return False
 
         # Write JSON to file
-        indent = options['indent']
+        indentVal = options['indent']
         with open(filePath, 'w') as outfile:
-            json.dump(doc_result, outfile, indent)
+            json.dump(doc_result, outfile, indent = indentVal)
 
         return True  
 

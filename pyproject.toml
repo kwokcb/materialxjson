@@ -25,7 +25,7 @@ dependencies = [
 [tool.setuptools.packages.find]
 where = ["src"]
 [tool.setuptools.package-data]
-"materialxgltf.data" = ["*.*"]
+"materialxjson.data" = ["*.*"]
 
 [project.urls]
 "Homepage" = "https://kwokcb.github.io/materialxjson/"
