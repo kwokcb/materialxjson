@@ -92,24 +92,29 @@ $(document).ready(function(){initNavTree('md__d___work_materialx_materialxjson__
 Installation</h1>
 <p>You can install the package via pip:</p>
 <div class="fragment"><div class="line">pip install materialxjson</div>
-<div class="line">``</div>
-<div class="line"> </div>
-<div class="line">## Usage</div>
-<div class="line">```python</div>
-<div class="line">import MaterialX as mx</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+Usage</h1>
+<div class="fragment"><div class="line">import MaterialX as mx</div>
 <div class="line">from materialxjson import core</div>
+<div class="line">import json</div>
+</div><!-- fragment --><div class="fragment"><div class="line">import pkg_resources</div>
 <div class="line"> </div>
-<div class="line"># Create an instance</div>
-<div class="line">mtlxjson = core.MaterialXJson()</div>
-<div class="line"> </div>
-<div class="line"># Load a MaterialX file</div>
+<div class="line"># Read in MaterialX file</div>
+<div class="line">mtlxFileName = pkg_resources.resource_filename(&#39;materialxjson&#39;, &#39;data/standard_surface_default.mtlx&#39;)</div>
+<div class="line">print(&#39;Using sample file: %s&#39; % mx.FilePath(mtlxFileName).getBaseName())</div>
 <div class="line">doc = mx.createDocument()</div>
-<div class="line">doc = mtlxjson.load(&#39;path_to_your_file.json&#39;)</div>
+<div class="line">mx.readFromXmlFile(doc, mtlxFileName)</div>
+</div><!-- fragment --><div class="fragment"><div class="line"># Write to JSON format</div>
+<div class="line">mtlxjson = core.MaterialXJson()</div>
+<div class="line">doc_result = mtlxjson.documentToJSON(doc)</div>
+<div class="line">jsondump = json.dumps(doc_result, indent=2)</div>
 <div class="line"> </div>
-<div class="line"># Manipulate the MaterialX data...</div>
+<div class="line"># Read from JSON format</div>
+<div class="line">fromdoc = mx.createDocument()</div>
+<div class="line">mtlxjson.documentFromJSON(doc_result, fromdoc)</div>
 <div class="line"> </div>
-<div class="line"># Save the MaterialX file</div>
-<div class="line">mtlxjson.save(doc, &#39;path_to_your_file.json&#39;)</div>
+<div class="line">#fromdoc = mtlxjson.load(&#39;test.json&#39;)</div>
+<div class="line">docstring = mx.writeToXmlString(fromdoc)</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

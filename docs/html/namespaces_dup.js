@@ -12,6 +12,7 @@ var namespaces_dup =
       ] ],
       [ "mtlxjson", "namespacematerialxjson_1_1mtlxjson.html", [
         [ "main", "namespacematerialxjson_1_1mtlxjson.html#a87646b33f73656f1fc6f15cf2ef4cdc1", null ]
-      ] ]
+      ] ],
+      [ "__version__", "____init_____8py.html#ae441d0dadcbbbb90cb17996f845246ab", null ]
     ] ]
 ];

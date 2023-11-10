@@ -26,12 +26,12 @@ var NAVTREE =
 [
   [ "MaterialXJSON", "index.html", [
     [ "MaterialXglTF", "index.html", null ],
-    [ "MaterialX JSON I/O", "md___users_bernardkwok_work_materialxjson__r_e_a_d_m_e.html", [
-      [ "Installation", "md___users_bernardkwok_work_materialxjson__r_e_a_d_m_e.html#autotoc_md4", null ],
-      [ "Usage", "md___users_bernardkwok_work_materialxjson__r_e_a_d_m_e.html#autotoc_md5", null ]
+    [ "MaterialX JSON I/O", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html", [
+      [ "Installation", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "Usage", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md5", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", null ],
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ]
@@ -50,7 +50,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+""
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
