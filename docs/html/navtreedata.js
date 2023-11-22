@@ -38,7 +38,8 @@ var NAVTREE =
         [ "XML to JSON Format Conversion", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md11", null ],
         [ "JSON to XML Format Conversion", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md12", null ]
       ] ],
-      [ "Author", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md13", null ]
+      [ "Caveats", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md13", null ],
+      [ "Author", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md14", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

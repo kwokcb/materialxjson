@@ -6,6 +6,7 @@ var namespaces_dup =
         [ "JsonReadOptions", "classmaterialxjson_1_1core_1_1_json_read_options.html", "classmaterialxjson_1_1core_1_1_json_read_options" ],
         [ "MaterialXJson", "classmaterialxjson_1_1core_1_1_material_x_json.html", "classmaterialxjson_1_1core_1_1_material_x_json" ],
         [ "Util", "classmaterialxjson_1_1core_1_1_util.html", null ],
+        [ "JSON_MIMETYPE_KEY", "core_8py.html#a01382e423ebb394b79a6cd3f1350b41e", null ],
         [ "str", "core_8py.html#a9d8707ed35086bf1b4cee0d70f4f737b", null ]
       ] ],
       [ "json2mtlx", "namespacematerialxjson_1_1json2mtlx.html", [

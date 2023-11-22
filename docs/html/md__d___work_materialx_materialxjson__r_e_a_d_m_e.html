@@ -142,7 +142,7 @@ XML to JSON Format Conversion</h2>
 <div class="line">jsonObject = mtlxjson.documentToJSON(doc)</div>
 </div><!-- fragment --><p>The contents of the JSON object can be extracted out using the <code>json</code> package as follows. (An indentation level of <code>2</code> is used to make the output more readable.)</p>
 <div class="fragment"><div class="line"># Convert JSON object to JSON string</div>
-<div class="line">jsonString = core.Util.jsonToJSONString(jsonObject, 2)</div>
+<div class="line">jsonString = core.Util.jsonToJSONString(jsonObject)</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
 JSON to XML Format Conversion</h2>
 <p>A JSON file can be read in as follows. In this case we load the sample file included with the package:</p>
@@ -162,6 +162,12 @@ JSON to XML Format Conversion</h2>
 <div class="line"># Write to XML String</div>
 <div class="line">docstring = core.Util.documentToXMLString(doc)</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md13"></a>
+Caveats</h1>
+<p>The following are some caveats to be aware of when using this package:</p><ul>
+<li>There is no equivalent support for "include files" for JSON conversion. The JSON representation is intended to be a single file representation.</li>
+<li>XML comments are not preserved in the JSON representation.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Author</h1>
 <ul>
 <li>LinkedIn: <a href="https://www.linkedin.com/in/bernard-kwok/" target="_blank">Bernard Kwok</a></li>

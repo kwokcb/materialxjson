@@ -268,4 +268,16 @@ text = '<details open><summary><b>JSON / XML Comparison</b></summary>\n\n' + out
 display_markdown(text, raw=True)
 
 
+# %% [markdown]
+# ## Additional Examples
+# 
+# A few additional examples are provided in the documentation `data` folder.
+# 
+# 1. [glTF Boombox Example](https://kwokcb.github.io/materialxjson/docs/data/gltf_pbr_boombox_mtlx.json)
+# <img src="https://kwokcb.github.io/materialxjson/docs/data/gltf_pbr_boombox_mtlx.json.svg" width=100% />
+# 
+# 2. [Standard Surface Tiled Wood](https://kwokcb.github.io/materialxjson/docs/data/standard_surface_wood_tiled_mtlx.json)
+# <img src="https://kwokcb.github.io/materialxjson/docs/data/standard_surface_wood_tiled_mtlx.json.svg" width=100% />
+# 
+
 
