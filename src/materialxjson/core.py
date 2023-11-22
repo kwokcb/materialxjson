@@ -15,23 +15,59 @@ import json
 # Utilities
 import os
 
+# Mime type
+JSON_MIMETYPE_KEY = 'mimetype'
+JSON_MIMETYPE: str = 'application/mtlx+json'
 # We use a colon to separate the category and name of an element in the JSON hierarchy
-JSON_CATEGORY_NAME_SEPARATOR = ':'
+JSON_CATEGORY_NAME_SEPARATOR: str = ':'
 # The root of the JSON hierarchy
-MATERIALX_DOCUMENT_ROOT = 'materialx'
+MATERIALX_DOCUMENT_ROOT: str = 'materialx'
+
+class JsonWriteOptions:
+    '''
+    Class for holding options for writing MaterialX to JSON.
+
+    Options:
+        - elementPredicate: MaterialX function predicate for filtering elements to write
+        - indent: The number of spaces to indent the JSON hierarchy
+        - separators: JSON separators. Default is: (',', ': ')
+    '''
+    def __init__(self):
+        '''
+        @brief Constructor
+        '''
+        self.elementPredicate: mx.ElementPredicate = None
+        self.indent = None
+        self.separators = (',', ': ') 
+
+class JsonReadOptions:
+    '''
+    Class for holding options for reading MaterialX from JSON
+
+    Options:
+        - upgradeVersion: Upgrade the MaterialX document to the latest version        
+    '''
+    def __init__(self):
+        '''
+        @brief Constructor
+        '''
+        self.upgradeVersion = True
 
 class MaterialXJson:
     '''
     Class for handling read and write of MaterialX from and to JSON
     '''
-
-    def elementToJSON(self, elem: mx.Element, jsonParent: dict) -> dict:
+    def elementToJSON(self, elem: mx.Element, jsonParent: dict, writeOptions: JsonWriteOptions = None) -> dict:
         '''
         @brief Convert an MaterialX XML element to JSON.
         Will recursively traverse the parent/child Element hierarchy.
         @param elem The MaterialX element to convert
         @param jsonParent The JSON element append to
+        @param writeOptions The write options to use. Default is None
         '''
+        if (writeOptions and writeOptions.elementPredicate and not writeOptions.elementPredicate(elem)):
+            return
+
         if (elem.getSourceUri() != ""):
             return
         
@@ -50,49 +86,70 @@ class MaterialXJson:
         jsonParent[elem.getCategory() + JSON_CATEGORY_NAME_SEPARATOR + elem.getName()] = jsonElem
         return jsonParent
 
-    def documentToJSON(self, doc: mx.Document) -> dict:
+    def documentToJSON(self, doc: mx.Document, writeOptions: JsonWriteOptions = None) -> dict:
         '''
         Convert an MaterialX XML document to JSON
         @param doc The MaterialX document to convert
+        @param writeOptions The write options to use. Default is None
         @return The JSON document
         '''
         root = {}
-        root["materialx"] = {}
+        # Set the mimetype
+        root[JSON_MIMETYPE_KEY] = JSON_MIMETYPE
 
+        # Create the document
+        documentRoot = {}
+
+        # Add document level attributes
         for attrName in doc.getAttributeNames():
-            root[attrName] =  doc.getAttribute(attrName)
+            documentRoot[attrName] =  doc.getAttribute(attrName)
 
+        # Add children
         for elem in doc.getChildren():
-            self.elementToJSON(elem, root[MATERIALX_DOCUMENT_ROOT])
+            self.elementToJSON(elem, documentRoot, writeOptions)
+
+        # Set 'materialx' root element 
+        root[MATERIALX_DOCUMENT_ROOT] = documentRoot
 
         return root
     
-    def documentToJSONString(self, doc: mx.Document, indentation = 2) -> str:
+    def documentToJSONString(self, doc: mx.Document, writeOptions: JsonWriteOptions = None) -> str:
         '''
         Convert an MaterialX XML document to JSON string
         @param doc The MaterialX document to convert
+        @param writeOptions The write options to use. Default is None
         @return The JSON string
         '''
-        result = self.documentToJSON(doc)
+        result = self.documentToJSON(doc, writeOptions)
         json_string = ''
         if result:
-            json_string = json.dumps(result, indent=indentation)
+            indentation = 2
+            sep = (',', ': ')
+            if writeOptions:
+                indentation = writeOptions.indent
+                sep = writeOptions.separators
+            json_string = json.dumps(result, indent=indentation, separators=sep)
+
         return json_string
 
-    def elementFromJSON(self, node: dict, elem: mx.Element) -> None:
+    def elementFromJSON(self, node: dict, elem: mx.Element, readOptions: JsonReadOptions = None) -> None:
         '''
         @brief Convert an JSON element to MaterialX
         @param node The JSON element to read
         @param elem The MaterialX element to write to
+        @param readOptions The read options to use. Default is None
         '''
         for key in node:
             value = node[key]
+            # Skip mimetype key
+            if key == JSON_MIMETYPE_KEY:
+                continue
 
             # Set attributes            
             if isinstance(value, str):
                 elem.setAttribute(key, str(value))
 
-            # Traverse chilren
+            # Traverse children
             else:
                 # Traverse down from root
                 if key == MATERIALX_DOCUMENT_ROOT:
@@ -105,23 +162,44 @@ class MaterialXJson:
                     child = elem.addChildOfCategory(category, name)
                     self.elementFromJSON(value, child)
 
-    def documentFromJSON(self, jsonDoc: dict, doc: mx.Document):
+    def documentFromJSON(self, jsonDoc: dict, doc: mx.Document, readOptions: JsonReadOptions = None) -> bool:
         '''
         @brief Convert a JSON document to MaterialX
         @param jsonDoc The JSON document to read
         @param doc The MaterialX document to write to 
+        @param readOptions The read options to use. Default is None
         '''
-        self.elementFromJSON(jsonDoc, doc)
+        readDoc = False
+        # Check mimetype and existence of MaterialX root element
+        if JSON_MIMETYPE_KEY in jsonDoc and jsonDoc[JSON_MIMETYPE_KEY] == JSON_MIMETYPE:
+            if MATERIALX_DOCUMENT_ROOT in jsonDoc:
+                self.elementFromJSON(jsonDoc, doc, readOptions)
+                readDoc = True
+            else:
+                print('JSON document is missing a MaterialX root element')
+        else:
+            print('JSON document is not a MaterialX document')
 
-    def documentFromJSONString(self, jsonString: str, doc: mx.Document):
+        if readDoc:
+            # Upgrade to latest version if requested
+            if readOptions and readOptions.upgradeVersion:
+                doc.upgradeVersion()
+
+        return readDoc
+
+    def documentFromJSONString(self, jsonString: str, doc: mx.Document, readOptions: JsonReadOptions = None) -> bool:
         '''
         @brief Convert a JSON document to MaterialX
         @param jsonString The JSON string to read
         @param doc The MaterialX document to write to 
+        @param readOptions The read options to use. Default is None
+        @return True if successful, false otherwise
         '''
         jsonDoc = json.loads(jsonString)
+        readDoc = False
         if jsonDoc:
-            self.elementFromJSON(jsonDoc, doc)   
+            readDoc = self.documentFromJSON(jsonDoc, doc, readOptions)
+        return readDoc
 
 class Util:
     '''
@@ -225,31 +303,38 @@ class Util:
         return lib, status
     
     @staticmethod
-    def jsonFileToXmlFile(fileName: str, outputFilename: str) -> bool:
+    def jsonFileToXmlFile(fileName: str, outputFilename: str, readOptions: JsonReadOptions = None) -> bool:
         '''
         @brief Convert a JSON file to an XML file
         @param fileName The file name to read from
+        @param outputFilename The file name to write to
+        @param readOptions The read options to use. Default is None
         @return True if successful, false otherwise
         '''
         mtlxjson = MaterialXJson()
 
         jsonFile = open(fileName, 'r')
         if not jsonFile:
-            return ''
+            return False
         jsonObject = json.load(jsonFile)
         if not jsonObject:
-            return ''
+            return False
 
         newDoc = mx.createDocument() 
-        mtlxjson.documentFromJSON(jsonObject, newDoc)
-        if newDoc.getChildren():
-
+        readDoc = mtlxjson.documentFromJSON(jsonObject, newDoc, readOptions)
+        if readDoc and newDoc.getChildren():
             mx.writeToXmlFile(newDoc, outputFilename)    
+            return True
+
+        return False
 
     @staticmethod
-    def xmlFileToJsonFile(xmlFileName: str, jsonFileName: str) -> None:
+    def xmlFileToJsonFile(xmlFileName: str, jsonFileName: str, writeOptions: JsonWriteOptions = None) -> None:
         '''
         Convert an MaterialX XML file to a JSON file
+        @param xmlFileName The XML file to read from
+        @param jsonFileName The JSON file to write to
+        @param writeOptions The write options to use. Default is None
         '''
         mtlxjson = MaterialXJson()
 
@@ -257,9 +342,14 @@ class Util:
         mx.readFromXmlFile(doc, xmlFileName)
         if doc:
             # Convert entire document to JSON
-            doc_result = mtlxjson.documentToJSON(doc)
+            doc_result = mtlxjson.documentToJSON(doc, writeOptions)
 
             # Write JSON to file
             with open(jsonFileName, 'w') as outfile:
-                json.dump(doc_result, outfile, indent=2)
+                indentation = 2
+                sep = (',', ': ')
+                if writeOptions:
+                    indentation = writeOptions.indent
+                    sep = writeOptions.separators
+                json.dump(doc_result, outfile, indent=indentation, separators=sep)
 

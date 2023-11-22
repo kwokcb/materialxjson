@@ -120,13 +120,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ada48b491316cee6c55dbc8224b6c267f"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmaterialxjson_1_1core_1_1_util.html#ada48b491316cee6c55dbc8224b6c267f">loadLibraries</a> (mx.FileSearchPath searchPath, list libraryFolders)</td></tr>
 <tr class="memdesc:ada48b491316cee6c55dbc8224b6c267f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all libraries from the given search path and library folders.  <a href="classmaterialxjson_1_1core_1_1_util.html#ada48b491316cee6c55dbc8224b6c267f">More...</a><br /></td></tr>
 <tr class="separator:ada48b491316cee6c55dbc8224b6c267f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dad076daef9a25a368b20c42b950f22"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmaterialxjson_1_1core_1_1_util.html#a4dad076daef9a25a368b20c42b950f22">jsonFileToXmlFile</a> (str fileName, str outputFilename)</td></tr>
-<tr class="memdesc:a4dad076daef9a25a368b20c42b950f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a JSON file to an XML file.  <a href="classmaterialxjson_1_1core_1_1_util.html#a4dad076daef9a25a368b20c42b950f22">More...</a><br /></td></tr>
-<tr class="separator:a4dad076daef9a25a368b20c42b950f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25a664c3fcead72ea3da48769594a4ce"><td class="memItemLeft" align="right" valign="top"><a id="a25a664c3fcead72ea3da48769594a4ce"></a>
-None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmaterialxjson_1_1core_1_1_util.html#a25a664c3fcead72ea3da48769594a4ce">xmlFileToJsonFile</a> (str xmlFileName, str jsonFileName)</td></tr>
-<tr class="memdesc:a25a664c3fcead72ea3da48769594a4ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an MaterialX XML file to a JSON file. <br /></td></tr>
-<tr class="separator:a25a664c3fcead72ea3da48769594a4ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae13a4aa250d9c8e604bb00b9d52038a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmaterialxjson_1_1core_1_1_util.html#aae13a4aa250d9c8e604bb00b9d52038a">jsonFileToXmlFile</a> (str fileName, str outputFilename, <a class="el" href="classmaterialxjson_1_1core_1_1_json_read_options.html">JsonReadOptions</a> readOptions=None)</td></tr>
+<tr class="memdesc:aae13a4aa250d9c8e604bb00b9d52038a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a JSON file to an XML file.  <a href="classmaterialxjson_1_1core_1_1_util.html#aae13a4aa250d9c8e604bb00b9d52038a">More...</a><br /></td></tr>
+<tr class="separator:aae13a4aa250d9c8e604bb00b9d52038a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0500080543a07ca198ad3b4bb6b676ed"><td class="memItemLeft" align="right" valign="top">None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmaterialxjson_1_1core_1_1_util.html#a0500080543a07ca198ad3b4bb6b676ed">xmlFileToJsonFile</a> (str xmlFileName, str jsonFileName, <a class="el" href="classmaterialxjson_1_1core_1_1_json_write_options.html">JsonWriteOptions</a> writeOptions=None)</td></tr>
+<tr class="memdesc:a0500080543a07ca198ad3b4bb6b676ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an MaterialX XML file to a JSON file.  <a href="classmaterialxjson_1_1core_1_1_util.html#a0500080543a07ca198ad3b4bb6b676ed">More...</a><br /></td></tr>
+<tr class="separator:a0500080543a07ca198ad3b4bb6b676ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utility class for MaterialX JSON. </p>
@@ -212,8 +211,8 @@ None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a id="a4dad076daef9a25a368b20c42b950f22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dad076daef9a25a368b20c42b950f22">&#9670;&nbsp;</a></span>jsonFileToXmlFile()</h2>
+<a id="aae13a4aa250d9c8e604bb00b9d52038a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae13a4aa250d9c8e604bb00b9d52038a">&#9670;&nbsp;</a></span>jsonFileToXmlFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,7 +230,13 @@ None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">str&#160;</td>
-          <td class="paramname"><em>outputFilename</em>&#160;</td>
+          <td class="paramname"><em>outputFilename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmaterialxjson_1_1core_1_1_json_read_options.html">JsonReadOptions</a> &#160;</td>
+          <td class="paramname"><em>readOptions</em> = <code>None</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -250,6 +255,8 @@ None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fileName</td><td>The file name to read from </td></tr>
+    <tr><td class="paramname">outputFilename</td><td>The file name to write to </td></tr>
+    <tr><td class="paramname">readOptions</td><td>The read options to use. Default is None </td></tr>
   </table>
   </dd>
 </dl>
@@ -469,6 +476,58 @@ None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="a0500080543a07ca198ad3b4bb6b676ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0500080543a07ca198ad3b4bb6b676ed">&#9670;&nbsp;</a></span>xmlFileToJsonFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> None materialxjson.core.Util.xmlFileToJsonFile </td>
+          <td>(</td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>xmlFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>jsonFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmaterialxjson_1_1core_1_1_json_write_options.html">JsonWriteOptions</a> &#160;</td>
+          <td class="paramname"><em>writeOptions</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert an MaterialX XML file to a JSON file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xmlFileName</td><td>The XML file to read from </td></tr>
+    <tr><td class="paramname">jsonFileName</td><td>The JSON file to write to </td></tr>
+    <tr><td class="paramname">writeOptions</td><td>The write options to use. Default is None </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="afe278eeabf54e0c06cc801d2c287a6b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe278eeabf54e0c06cc801d2c287a6b2">&#9670;&nbsp;</a></span>xmlStringToDocument()</h2>
 
@@ -515,7 +574,7 @@ None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/Work/materialx/materialxjson/src/materialxjson/core.py</li>
+<li>core.py</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

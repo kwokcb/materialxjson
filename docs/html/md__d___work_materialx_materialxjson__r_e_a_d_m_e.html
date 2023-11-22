@@ -87,12 +87,22 @@ $(document).ready(function(){initNavTree('md__d___work_materialx_materialxjson__
 <div class="title">MaterialX JSON I/O </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This is a Python package for supporting interoperability of MaterialX documents by adding support conversion to / from a <code>JSON</code> representation.</p>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md5"></a>
+Contents</h1>
+<ul>
+<li><a href="#Introduction">Introduction</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#documentation">Documentation</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Introduction</h1>
+<p>This is a Python package for supporting interoperability of MaterialX documents by adding support conversion to / from a <code>JSON</code> representation.</p>
 <p>The <code>JSON</code> representation is lossless and is targeted at integrations which prefer to use <code>JSON</code> as a data exchange format instead of <code>XML</code>.</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 Documentation</h1>
-<p>For further information see the <b><a href="https://kwokcb.github.io/materialxjson/index.html">home page</a></b> for this package which includes links to API documentation and a Jupyter notebook with examples which expands on the basic <em>Usage</em> example.</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<p>Visit the <b><a href="https://kwokcb.github.io/materialxjson/index.html">home page</a></b> for For further information about this package, including links to API documentation and a Jupyter notebook with sample code that expands on the basic <em>Usage</em> example.</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Installation</h1>
 <p>The Python package is losted on <b><a href="https://pypi.org/project/materialxjson">PyPi</a></b> and can be installed using <code>pip</code>`:</p>
 <div class="fragment"><div class="line">pip install materialxjson</div>
@@ -100,7 +110,7 @@ Installation</h1>
 <div class="fragment"><div class="line">python -m build</div>
 </div><!-- fragment --><p>This will build a distribution folder called <code>dist</code> which contains a zip file which can be installed using:</p>
 <div class="fragment"><div class="line">pip --install &lt;name of zip&gt;</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
 Usage</h1>
 <p>The following example shows bidirectional conversion:</p>
 <ol type="1">
@@ -108,13 +118,13 @@ Usage</h1>
 <li>A MaterialX file in <code>JSON</code> format is read in and written to a string in <code>XML</code> format.</li>
 </ol>
 <p>Note that any <code>JSON</code> package can be used to perform <code>JSON</code> I/O. The <code>json</code> package is used by the utilities provided in this package.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Package Setup</h2>
 <p>The <code>materialjson</code> package can be loaded as follows, along with MaterialX and json packages:</p>
 <div class="fragment"><div class="line">import json</div>
 <div class="line">import MaterialX as mx</div>
 <div class="line">from materialxjson import core</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
 XML to JSON Format Conversion</h2>
 <p>A MaterialX document can be read in from an XML file as follows:</p>
 <div class="fragment"><div class="line">import pkg_resources</div>
@@ -132,8 +142,8 @@ XML to JSON Format Conversion</h2>
 <div class="line">jsonObject = mtlxjson.documentToJSON(doc)</div>
 </div><!-- fragment --><p>The contents of the JSON object can be extracted out using the <code>json</code> package as follows. (An indentation level of <code>2</code> is used to make the output more readable.)</p>
 <div class="fragment"><div class="line"># Convert JSON object to JSON string</div>
-<div class="line">jsonString = core.Util.jsonToJSONString(jsonObject, 2)</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+<div class="line">jsonString = core.Util.jsonToJSONString(jsonObject)</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
 JSON to XML Format Conversion</h2>
 <p>A JSON file can be read in as follows. In this case we load the sample file included with the package:</p>
 <div class="fragment"><div class="line"># Get file to load</div>
@@ -151,7 +161,20 @@ JSON to XML Format Conversion</h2>
 <div class="line"> </div>
 <div class="line"># Write to XML String</div>
 <div class="line">docstring = core.Util.documentToXMLString(doc)</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md13"></a>
+Caveats</h1>
+<p>The following are some caveats to be aware of when using this package:</p><ul>
+<li>There is no equivalent support for "include files" for JSON conversion. The JSON representation is intended to be a single file representation.</li>
+<li>XML comments are not preserved in the JSON representation.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md14"></a>
+Author</h1>
+<ul>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/bernard-kwok/" target="_blank">Bernard Kwok</a></li>
+<li>GitHub: <a href="https://github.com/kwokcb">kwokcb</a></li>
+<li>Email: <a href="#" onclick="location.href='mai'+'lto:'+'kwo'+'kc'+'b@g'+'ma'+'il.'+'co'+'m'; return false;">kwokcb@gmail.com</a> </li>
+</ul>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

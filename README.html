@@ -422,7 +422,7 @@ jsonObject = mtlxjson.documentToJSON(doc)
 <p>The contents of the JSON object can be extracted out using the <code>json</code> package as follows. (An indentation level of <code>2</code> is<br>
 used to make the output more readable.)</p>
 <pre class="hljs"><code><div><span class="hljs-comment"># Convert JSON object to JSON string</span>
-jsonString = core.Util.jsonToJSONString(jsonObject, <span class="hljs-number">2</span>)
+jsonString = core.Util.jsonToJSONString(jsonObject)
 </div></code></pre>
 <h3 id="json-to-xml-format-conversion">JSON to XML Format Conversion</h3>
 <p>A JSON file can be read in as follows. In this case we load the sample file included with the package:</p>
@@ -443,6 +443,12 @@ mtlxjson.documentFromJSON(jsonObject, doc)
 <span class="hljs-comment"># Write to XML String</span>
 docstring = core.Util.documentToXMLString(doc)
 </div></code></pre>
+<h2 id="caveats">Caveats</h2>
+<p>The following are some caveats to be aware of when using this package:</p>
+<ul>
+<li>There is no equivalent support for &quot;include files&quot; for JSON conversion. The JSON representation is intended to be a single file representation.</li>
+<li>XML comments are not preserved in the JSON representation.</li>
+</ul>
 <h2 id="author">Author</h2>
 <ul>
 <li>LinkedIn: <a href="https://www.linkedin.com/in/bernard-kwok/" target="_blank">Bernard Kwok</a></li>

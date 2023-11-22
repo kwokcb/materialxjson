@@ -85,7 +85,7 @@ used to make the output more readable.)
 
 ```python
 # Convert JSON object to JSON string
-jsonString = core.Util.jsonToJSONString(jsonObject, 2)
+jsonString = core.Util.jsonToJSONString(jsonObject)
 ```
 
 ### JSON to XML Format Conversion
@@ -113,6 +113,12 @@ mtlxjson.documentFromJSON(jsonObject, doc)
 # Write to XML String
 docstring = core.Util.documentToXMLString(doc)
 ```
+
+## Caveats
+
+The following are some caveats to be aware of when using this package:
+- There is no equivalent support for "include files" for JSON conversion. The JSON representation is intended to be a single file representation.
+- XML comments are not preserved in the JSON representation.
 
 ## Author
 

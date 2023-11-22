@@ -25,22 +25,28 @@
 var NAVTREE =
 [
   [ "MaterialXJSON", "index.html", [
-    [ "Documentation", "index.html#autotoc_md1", null ],
-    [ "Examples", "index.html#autotoc_md2", null ],
+    [ "Package", "index.html#autotoc_md1", null ],
+    [ "Documentation", "index.html#autotoc_md2", null ],
+    [ "Examples", "index.html#autotoc_md3", null ],
     [ "MaterialX JSON I/O", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html", [
-      [ "Documentation", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md4", null ],
-      [ "Installation", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md5", null ],
-      [ "Usage", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md6", [
-        [ "Package Setup", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md7", null ],
-        [ "XML to JSON Format Conversion", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md8", null ],
-        [ "JSON to XML Format Conversion", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md9", null ]
-      ] ]
+      [ "Contents", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md5", null ],
+      [ "Introduction", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md6", null ],
+      [ "Documentation", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md7", null ],
+      [ "Installation", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md8", null ],
+      [ "Usage", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md9", [
+        [ "Package Setup", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md10", null ],
+        [ "XML to JSON Format Conversion", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md11", null ],
+        [ "JSON to XML Format Conversion", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md12", null ]
+      ] ],
+      [ "Caveats", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md13", null ],
+      [ "Author", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md14", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
