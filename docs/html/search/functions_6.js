@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readjson_38',['readJson',['../classmaterialxjson_1_1core_1_1_util.html#ad6ffdb7d3d8d3250999c4e428b0205f2',1,'materialxjson::core::Util']]]
+  ['main_46',['main',['../namespacematerialxjson_1_1json2mtlx.html#a691eebd626223de88ccf8e47ce00b375',1,'materialxjson.json2mtlx.main()'],['../namespacematerialxjson_1_1mtlx2json.html#ab243016121fb8470ffcd459e61b93a08',1,'materialxjson.mtlx2json.main()']]]
 ];

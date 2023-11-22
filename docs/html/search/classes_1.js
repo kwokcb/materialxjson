@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['util_23',['Util',['../classmaterialxjson_1_1core_1_1_util.html',1,'materialxjson::core']]]
+  ['materialxjson_29',['MaterialXJson',['../classmaterialxjson_1_1core_1_1_material_x_json.html',1,'materialxjson::core']]]
 ];
