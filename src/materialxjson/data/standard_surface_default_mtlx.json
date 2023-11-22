@@ -1,5 +1,8 @@
 {
+  "mimetype": "application/mtlx+json",
   "materialx": {
+    "version": "1.38",
+    "colorspace": "lin_rec709",
     "standard_surface:SR_default": {
       "type": "surfaceshader",
       "input:base": {
@@ -166,7 +169,5 @@
         "nodename": "SR_default"
       }
     }
-  },
-  "version": "1.38",
-  "colorspace": "lin_rec709"
+  }
 }

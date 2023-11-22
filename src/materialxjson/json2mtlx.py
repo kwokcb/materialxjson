@@ -53,8 +53,8 @@ def main():
             outputFileName = outputFilePath.asString()
             readOptions = core.JsonReadOptions()
             readOptions.upgradeVersion = opts.upgradeVersion
-            core.Util.jsonFileToXmlFile(fileName, outputFileName, readOptions)
-            print('Convert JSON file "%s" -> XML file "%s"' % (fileName, outputFileName))
+            converted = core.Util.jsonFileToXmlFile(fileName, outputFileName, readOptions)
+            print('Convert JSON file "%s" -> XML file "%s". Status: %s' % (fileName, outputFileName, converted))
            
 if __name__ == '__main__':
     main()

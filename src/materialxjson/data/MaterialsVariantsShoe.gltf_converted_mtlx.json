@@ -1,5 +1,7 @@
 {
+  "mimetype": "application/mtlx+json",
   "materialx": {
+    "version": "1.38",
     "gltf_pbr:phong1SG": {
       "type": "surfaceshader",
       "nodedef": "ND_gltf_pbr_surfaceshader",
@@ -336,6 +338,5 @@
         "geom": "/Shoeobj/g_Shoe/Shoe/shoe"
       }
     }
-  },
-  "version": "1.38"
+  }
 }
