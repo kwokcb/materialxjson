@@ -101,8 +101,50 @@ doc = mx.createDocument()
 mx.readFromXmlFile(doc, mtlxFileName)
 
 # Convert to JSON String
-jsonString = mtlxjson.documentToJSONString(doc, 2)
-displaySource('Document to JSON String (direct)', jsonString, 'json', False)
+jsonString = mtlxjson.documentToJSONString(doc)
+displaySource('Document to JSON String (direct)', jsonString, 'json', True)
+
+# %% [markdown]
+# ### XML to JSON Options
+# 
+# There are currently a few options available for XML to JSON conversion. These include:
+# 
+# 1. `indent` - The number of spaces to indent the JSON output. Default is 2.
+# 2. `elementPredicate` - A function that takes an element name and returns a boolean indicating whether the element should be included in the JSON output. Default is to include all elements.
+# 3. `separators`` - A tuple of strings to use for separating items in a list and a dictionary respectively. Default is `(', ', ': ')`.
+# 
+# In the example below we skip any surface material elements and adjust the formatting to remove unnecessary spacing.
+# 
+# The `mtlx2json` utility script exposes options as command line arguments.
+
+# %%
+import pkg_resources
+import MaterialX as mx
+from materialxjson import core
+from IPython.display import display_markdown
+
+# Create I/O handler
+mtlxjson = core.MaterialXJson()
+
+# Read XML document
+mtlxFileName = pkg_resources.resource_filename('materialxjson', 'data/standard_surface_default.mtlx')
+print('Using sample file: %s' % mx.FilePath(mtlxFileName).getBaseName())
+doc = mx.createDocument()
+mx.readFromXmlFile(doc, mtlxFileName)
+
+def skipMaterial(element):
+    print('- Skip material element: ' + element.getName())
+    return element.getCategory() != 'surfacematerial'
+
+# Set write options
+writeOptions = core.JsonWriteOptions()
+writeOptions.indent = None # No indentation
+writeOptions.separators = (',', ':') # No whitespace
+writeOptions.elementPredicate = skipMaterial # Skip materials
+
+# Convert to JSON String
+jsonString = mtlxjson.documentToJSONString(doc, writeOptions)
+displaySource('Document to JSON String (direct)', jsonString, 'json', True)
 
 # %% [markdown]
 # ## JSON to XML Conversion
@@ -128,7 +170,7 @@ jsonObject = core.Util.readJson(jsonFileName)
 doc = mx.createDocument()
 mtlxjson.documentFromJSON(jsonObject, doc)
 
-# Write to XML String
+# Write to JSON String
 docstring = core.Util.documentToXMLString(doc)
 displaySource('XML from JSON', docstring, 'xml', True)
 
@@ -150,13 +192,42 @@ print('Using sample file: %s' % mx.FilePath(jsonFileName).getBaseName())
 jsonObject = core.Util.readJson(jsonFileName)
 jsonString = core.Util.jsonToJSONString(jsonObject, 2)
 
-# Rread into document
+# Read into document
 doc = mx.createDocument()
 mtlxjson.documentFromJSONString(jsonString, doc)
 
 # Write out to XML string
 docstring = core.Util.documentToXMLString(doc)
-displaySource('XML from JSON String', docstring, 'xml', False)
+displaySource('XML from JSON String', docstring, 'xml', True)
+
+# %% [markdown]
+# ### JSON to MaterialX Options
+# 
+# The options available for JSON to XML conversion include:
+# 1. `upgradeVersion` - A boolean indicating whether to upgrade the version of the MaterialX document to the latest version. Default is `True`.
+
+# %%
+import pkg_resources
+import MaterialX as mx
+from materialxjson import core
+from IPython.display import display_markdown
+
+# Create I/O handler
+mtlxjson = core.MaterialXJson()
+
+# Load a MaterialX JSON document
+jsonFileName = pkg_resources.resource_filename('materialxjson', 'data/standard_surface_default_mtlx.json')
+print('Using sample file: %s' % mx.FilePath(jsonFileName).getBaseName())
+jsonObject = core.Util.readJson(jsonFileName)
+jsonString = core.Util.jsonToJSONString(jsonObject, 2)
+
+# Read into document
+doc = mx.createDocument()
+
+# Set read options
+readOptions = core.JsonReadOptions()
+readOptions.upgradeVersion = False # Do not upgrade version
+mtlxjson.documentFromJSONString(jsonString, doc, readOptions)
 
 # %% [markdown]
 # ## Comparisons 
@@ -179,7 +250,10 @@ mx.readFromXmlFile(doc, mtlxFileName)
 xmlString = core.Util.documentToXMLString(doc)
 
 mtlxjson = core.MaterialXJson()
-jsonString = mtlxjson.documentToJSONString(doc, 2)
+writeOptions = core.JsonWriteOptions()
+writeOptions.indent = 1
+writeOptions.separators = (',', ':')
+jsonString = mtlxjson.documentToJSONString(doc, writeOptions)
 
 xmlString = xmlString.replace('\n', '<br>')
 xmlString = xmlString.replace(' ', '&nbsp;&nbsp;')
