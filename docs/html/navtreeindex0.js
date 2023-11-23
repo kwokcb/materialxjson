@@ -1,5 +1,7 @@
 var NAVTREEINDEX0 =
 {
+"":[4,0,0],
+"":[4,0,0,0],
 "____init_____8py.html#ae441d0dadcbbbb90cb17996f845246ab":[4,0,0,3],
 "annotated.html":[5,0],
 "classes.html":[5,1],
@@ -46,7 +48,5 @@ var NAVTREEINDEX0 =
 "namespacemembers_func.html":[4,1,1],
 "namespacemembers_vars.html":[4,1,2],
 "namespaces.html":[4,0],
-"pages.html":[],
-"":[4,0,0],
-"":[4,0,0,0]
+"pages.html":[]
 };
