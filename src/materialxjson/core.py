@@ -36,7 +36,7 @@ class JsonWriteOptions:
         - elementPredicate: MaterialX function predicate for filtering elements to write
         - indent: The number of spaces to indent the JSON hierarchy
         - separators: JSON separators. Default is: (',', ': ')
-        - addInputOutputCategories: Add input and output categories to JSON elements. Default is True
+        - addInputOutputCategories: Add input and output categories to JSON elements. Default is False
     '''
     def __init__(self):
         '''
@@ -84,7 +84,7 @@ class MaterialXJson:
         category = elem.getCategory()
         # It is redundant but not incorrect to add in the category
         # For now always add in the category
-        if (not writeOptions or (writeOptions and writeOptions.addInputOutputCategories)) or (category not in ['input', 'output']):
+        if (writeOptions and writeOptions.addInputOutputCategories) or (category not in ['input', 'output']):
             jsonElem['category'] = category
         
         # Add attributes
@@ -129,17 +129,17 @@ class MaterialXJson:
         root[JSON_MIMETYPE_KEY] = JSON_MIMETYPE
 
         # Create the document
-        documentRoot = []
+        documentRoot = {}
 
         # Add document level attributes
-        attrib = {}            
         for attrName in doc.getAttributeNames():
-            attrib[attrName] = doc.getAttribute(attrName)
-        documentRoot.append(attrib)
+            documentRoot[attrName] = doc.getAttribute(attrName)
 
         # Add children
+        children = []
         for elem in doc.getChildren():
-            self.elementToJSON(elem, documentRoot, writeOptions)
+            self.elementToJSON(elem, children, writeOptions)
+        documentRoot['children'] = children
 
         # Set 'materialx' root element 
         root[MATERIALX_DOCUMENT_ROOT] = documentRoot
@@ -174,26 +174,33 @@ class MaterialXJson:
         '''
         for key in node:
             value = node[key]
-            # Skip mimetype key
-            if key == JSON_MIMETYPE_KEY:
-                continue
 
             # Set attributes            
             if isinstance(value, str):
-                elem.setAttribute(key, str(value))
+                if key not in ['name', 'category']:
+                    elem.setAttribute(key, str(value))
 
             # Traverse children
-            else:
-                # Traverse down from root
-                if key == MATERIALX_DOCUMENT_ROOT:
-                    self.elementFromJSON(value, elem)
-                    continue
+            elif key == INPUTS_STRING:
+                for child in value:
+                    category = 'input'
+                    name = child['name']
+                    childElem = elem.addChildOfCategory(category, name)
+                    self.elementFromJSON(child, childElem)
 
-                # Split key name by ":" to get category and name
-                category, name = key.split(JSON_CATEGORY_NAME_SEPARATOR, 1)
-                if category and not elem.getChild(name):
-                    child = elem.addChildOfCategory(category, name)
-                    self.elementFromJSON(value, child)
+            elif key == OUTPUTS_STRING:
+                for child in value:
+                    category = 'output'
+                    name = child['name']
+                    childElem = elem.addChildOfCategory(category, name)
+                    self.elementFromJSON(child, childElem)
+                
+            elif key == CHILDREN_STRING:
+                for child in value:
+                    category = child['category']
+                    name = child['name']
+                    childElem = elem.addChildOfCategory(category, name)
+                    self.elementFromJSON(child, childElem)
 
     def documentFromJSON(self, jsonDoc: dict, doc: mx.Document, readOptions: JsonReadOptions = None) -> bool:
         '''
@@ -206,7 +213,7 @@ class MaterialXJson:
         # Check mimetype and existence of MaterialX root element
         if JSON_MIMETYPE_KEY in jsonDoc and jsonDoc[JSON_MIMETYPE_KEY] == JSON_MIMETYPE:
             if MATERIALX_DOCUMENT_ROOT in jsonDoc:
-                self.elementFromJSON(jsonDoc, doc, readOptions)
+                self.elementFromJSON(jsonDoc['materialx'], doc, readOptions)
                 readDoc = True
             else:
                 print('JSON document is missing a MaterialX root element')
@@ -368,7 +375,18 @@ class Util:
         @param readOptions The read options to use. Default is None
         @return True if successful, false otherwise
         '''
-        newDoc = MaterialXJson.jsonFileToXml(fileName, readOptions)
+        jsonFile = open(fileName, 'r')
+        if not jsonFile:
+            return None
+        jsonObject = json.load(jsonFile)
+        if not jsonObject:
+            return None
+
+        #newDoc = mx.createDocument() 
+        mtlxjson = MaterialXJson()
+        newDoc = mx.createDocument()
+        created = mtlxjson.documentFromJSON(jsonObject, newDoc, readOptions)
+
         if newDoc.getChildren():
             mx.writeToXmlFile(newDoc, outputFilename)    
             return True
