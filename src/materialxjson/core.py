@@ -303,6 +303,30 @@ class Util:
         return lib, status
     
     @staticmethod
+    def jsonFileToXml(fileName: str, readOptions: JsonReadOptions = None) -> mx.Document:
+        '''
+        @brief Convert a JSON file to an XML file
+        @param fileName The file name to read from
+        @param readOptions The read options to use. Default is None
+        @return The MaterialX document if successful, None otherwise
+        '''
+        mtlxjson = MaterialXJson()
+
+        jsonFile = open(fileName, 'r')
+        if not jsonFile:
+            return None
+        jsonObject = json.load(jsonFile)
+        if not jsonObject:
+            return None
+
+        newDoc = mx.createDocument() 
+        readDoc = mtlxjson.documentFromJSON(jsonObject, newDoc, readOptions)
+        if readDoc:
+            return newDoc
+
+        return None
+
+    @staticmethod
     def jsonFileToXmlFile(fileName: str, outputFilename: str, readOptions: JsonReadOptions = None) -> bool:
         '''
         @brief Convert a JSON file to an XML file
@@ -311,18 +335,8 @@ class Util:
         @param readOptions The read options to use. Default is None
         @return True if successful, false otherwise
         '''
-        mtlxjson = MaterialXJson()
-
-        jsonFile = open(fileName, 'r')
-        if not jsonFile:
-            return False
-        jsonObject = json.load(jsonFile)
-        if not jsonObject:
-            return False
-
-        newDoc = mx.createDocument() 
-        readDoc = mtlxjson.documentFromJSON(jsonObject, newDoc, readOptions)
-        if readDoc and newDoc.getChildren():
+        newDoc = MaterialXJson.jsonFileToXml(fileName, readOptions)
+        if newDoc.getChildren():
             mx.writeToXmlFile(newDoc, outputFilename)    
             return True
 
