@@ -49,7 +49,10 @@ def main():
     for fileName in fileList:
 
         if extension == 'json':
-            outputFilePath = outputPath / mx.FilePath(fileName.replace('.json', '_json.mtlx'))
+            if mx.FilePath(fileName).isAbsolute():
+                outputFilePath = mx.FilePath(fileName.replace('.json', '_json.mtlx'))
+            else:
+                outputFilePath = outputPath / mx.FilePath(fileName.replace('.json', '_json.mtlx'))
             outputFileName = outputFilePath.asString()
             readOptions = core.JsonReadOptions()
             readOptions.upgradeVersion = opts.upgradeVersion

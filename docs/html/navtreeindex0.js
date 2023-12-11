@@ -1,7 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"":[4,0,0],
-"":[4,0,0,0],
 "____init_____8py.html#ae441d0dadcbbbb90cb17996f845246ab":[4,0,0,3],
 "annotated.html":[5,0],
 "classes.html":[5,1],
@@ -9,9 +7,10 @@ var NAVTREEINDEX0 =
 "classmaterialxjson_1_1core_1_1_json_read_options.html#a9944100598c8ca6ba74ada5179da5574":[5,0,0,0,1,1],
 "classmaterialxjson_1_1core_1_1_json_read_options.html#afa06661e0ad1e0814fb60eeedc0a01ae":[5,0,0,0,1,0],
 "classmaterialxjson_1_1core_1_1_json_write_options.html":[5,0,0,0,0],
-"classmaterialxjson_1_1core_1_1_json_write_options.html#a1549e9b1c601fc5b6bc4ad02c1f218a0":[5,0,0,0,0,1],
-"classmaterialxjson_1_1core_1_1_json_write_options.html#a2637acdeb0de5b44789d5c483560bcd1":[5,0,0,0,0,2],
+"classmaterialxjson_1_1core_1_1_json_write_options.html#a1549e9b1c601fc5b6bc4ad02c1f218a0":[5,0,0,0,0,2],
+"classmaterialxjson_1_1core_1_1_json_write_options.html#a2637acdeb0de5b44789d5c483560bcd1":[5,0,0,0,0,3],
 "classmaterialxjson_1_1core_1_1_json_write_options.html#a55351a8d911f30168642cb75ffed1f51":[5,0,0,0,0,0],
+"classmaterialxjson_1_1core_1_1_json_write_options.html#aa579d112c5db5241d33641f89bc2f7d3":[5,0,0,0,0,1],
 "classmaterialxjson_1_1core_1_1_material_x_json.html":[5,0,0,0,2],
 "classmaterialxjson_1_1core_1_1_material_x_json.html#a0820d3ba421f43faa5190202ee6665b8":[5,0,0,0,2,4],
 "classmaterialxjson_1_1core_1_1_material_x_json.html#a63efbe7a18e451de2863d9c4ffacc27f":[5,0,0,0,2,5],
@@ -20,8 +19,11 @@ var NAVTREEINDEX0 =
 "classmaterialxjson_1_1core_1_1_material_x_json.html#aa3074ba05933b409a0b22b4d077c9307":[5,0,0,0,2,3],
 "classmaterialxjson_1_1core_1_1_material_x_json.html#af5f4910ad6013b04de537f3c088b4284":[5,0,0,0,2,1],
 "classmaterialxjson_1_1core_1_1_util.html":[5,0,0,0,3],
-"core_8py.html#a01382e423ebb394b79a6cd3f1350b41e":[4,0,0,0,4],
-"core_8py.html#a9d8707ed35086bf1b4cee0d70f4f737b":[4,0,0,0,5],
+"core_8py.html#a01382e423ebb394b79a6cd3f1350b41e":[4,0,0,0,6],
+"core_8py.html#a83630f683001cadc26b4231eba73958d":[4,0,0,0,5],
+"core_8py.html#a9a00afe64f023d95c6d517818c1c1405":[4,0,0,0,4],
+"core_8py.html#a9d8707ed35086bf1b4cee0d70f4f737b":[4,0,0,0,8],
+"core_8py.html#aa01517c286e10ee8add6afcdf5eb53fd":[4,0,0,0,7],
 "functions.html":[5,2,0],
 "functions_func.html":[5,2,1],
 "index.html":[],
@@ -48,5 +50,7 @@ var NAVTREEINDEX0 =
 "namespacemembers_func.html":[4,1,1],
 "namespacemembers_vars.html":[4,1,2],
 "namespaces.html":[4,0],
-"pages.html":[]
+"pages.html":[],
+"":[4,0,0],
+"":[4,0,0,0]
 };

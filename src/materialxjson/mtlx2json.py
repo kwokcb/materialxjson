@@ -3,7 +3,7 @@
 Command to convert from  XML and JSON representation of a MaterialX document
 '''
 import MaterialX as mx
-from materialxjson import core
+import core
 import json
 import os, argparse
 
@@ -91,7 +91,10 @@ def main():
         return True
 
     for fileName in fileList:
-        outputFilePath = outputPath / mx.FilePath(fileName.replace('.mtlx', '_mtlx.json'))
+        if mx.FilePath(fileName).isAbsolute():
+            outputFilePath = mx.FilePath(fileName.replace('.mtlx', '_mtlx.json'))
+        else:            
+            outputFilePath = outputPath / mx.FilePath(fileName.replace('.mtlx', '_mtlx.json'))
         outputFileName = outputFilePath.asString()
         writeOptions = core.JsonWriteOptions()
         predicate = Predicates()        
