@@ -120,6 +120,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ada48b491316cee6c55dbc8224b6c267f"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmaterialxjson_1_1core_1_1_util.html#ada48b491316cee6c55dbc8224b6c267f">loadLibraries</a> (mx.FileSearchPath searchPath, list libraryFolders)</td></tr>
 <tr class="memdesc:ada48b491316cee6c55dbc8224b6c267f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all libraries from the given search path and library folders.  <a href="classmaterialxjson_1_1core_1_1_util.html#ada48b491316cee6c55dbc8224b6c267f">More...</a><br /></td></tr>
 <tr class="separator:ada48b491316cee6c55dbc8224b6c267f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e4a78d17a7617f59c6a16c1f69a41fb"><td class="memItemLeft" align="right" valign="top">mx.Document&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmaterialxjson_1_1core_1_1_util.html#a2e4a78d17a7617f59c6a16c1f69a41fb">jsonFileToXml</a> (str fileName, <a class="el" href="classmaterialxjson_1_1core_1_1_json_read_options.html">JsonReadOptions</a> readOptions=None)</td></tr>
+<tr class="memdesc:a2e4a78d17a7617f59c6a16c1f69a41fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a JSON file to an XML file.  <a href="classmaterialxjson_1_1core_1_1_util.html#a2e4a78d17a7617f59c6a16c1f69a41fb">More...</a><br /></td></tr>
+<tr class="separator:a2e4a78d17a7617f59c6a16c1f69a41fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae13a4aa250d9c8e604bb00b9d52038a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmaterialxjson_1_1core_1_1_util.html#aae13a4aa250d9c8e604bb00b9d52038a">jsonFileToXmlFile</a> (str fileName, str outputFilename, <a class="el" href="classmaterialxjson_1_1core_1_1_json_read_options.html">JsonReadOptions</a> readOptions=None)</td></tr>
 <tr class="memdesc:aae13a4aa250d9c8e604bb00b9d52038a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a JSON file to an XML file.  <a href="classmaterialxjson_1_1core_1_1_util.html#aae13a4aa250d9c8e604bb00b9d52038a">More...</a><br /></td></tr>
 <tr class="separator:aae13a4aa250d9c8e604bb00b9d52038a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,6 +211,52 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A list of file paths </dd></dl>
+
+</div>
+</div>
+<a id="a2e4a78d17a7617f59c6a16c1f69a41fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e4a78d17a7617f59c6a16c1f69a41fb">&#9670;&nbsp;</a></span>jsonFileToXml()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> mx.Document materialxjson.core.Util.jsonFileToXml </td>
+          <td>(</td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmaterialxjson_1_1core_1_1_json_read_options.html">JsonReadOptions</a> &#160;</td>
+          <td class="paramname"><em>readOptions</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a JSON file to an XML file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>The file name to read from </td></tr>
+    <tr><td class="paramname">readOptions</td><td>The read options to use. Default is None </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The MaterialX document if successful, None otherwise </dd></dl>
 
 </div>
 </div>

@@ -23,6 +23,11 @@ JSON_CATEGORY_NAME_SEPARATOR: str = ':'
 # The root of the JSON hierarchy
 MATERIALX_DOCUMENT_ROOT: str = 'materialx'
 
+# Special names for child element grouping. These do not correspond to any MaterialX syntax
+INPUTS_STRING = 'inputs'
+OUTPUTS_STRING = 'outputs'
+CHILDREN_STRING = 'children'
+
 class JsonWriteOptions:
     '''
     Class for holding options for writing MaterialX to JSON.
@@ -31,6 +36,7 @@ class JsonWriteOptions:
         - elementPredicate: MaterialX function predicate for filtering elements to write
         - indent: The number of spaces to indent the JSON hierarchy
         - separators: JSON separators. Default is: (',', ': ')
+        - addInputOutputCategories: Add input and output categories to JSON elements. Default is True
     '''
     def __init__(self):
         '''
@@ -39,6 +45,7 @@ class JsonWriteOptions:
         self.elementPredicate: mx.ElementPredicate = None
         self.indent = None
         self.separators = (',', ': ') 
+        self.addInputOutputCategories = True
 
 class JsonReadOptions:
     '''
@@ -73,17 +80,41 @@ class MaterialXJson:
         
         # Create a new JSON element for the MaterialX element
         jsonElem = {}
-
+        jsonElem['name'] = elem.getName()
+        category = elem.getCategory()
+        # It is redundant but not incorrect to add in the category
+        # For now always add in the category
+        if (not writeOptions or (writeOptions and writeOptions.addInputOutputCategories)) or (category not in ['input', 'output']):
+            jsonElem['category'] = category
+        
         # Add attributes
         for attrName in elem.getAttributeNames():
             jsonElem[attrName] = elem.getAttribute(attrName)
 
-        # Add children
+        # Add children. Split based on category: input, output or other
+        inputs = []
+        outputs = []
+        non_input_outputs = []
         for child in elem.getChildren():
-            jsonElem = self.elementToJSON(child, jsonElem)
+            category = child.getCategory()
+            if category == 'input':
+                self.elementToJSON(child, inputs)
+            elif category == 'output':
+                self.elementToJSON(child, outputs)
+            else:
+                self.elementToJSON(child, non_input_outputs)
         
-        # Add element to parent
-        jsonParent[elem.getCategory() + JSON_CATEGORY_NAME_SEPARATOR + elem.getName()] = jsonElem
+        # Add inputs, outputs and other children
+        if len(inputs) > 0:
+            jsonElem[INPUTS_STRING] = inputs
+        if len(outputs) > 0:
+            jsonElem[OUTPUTS_STRING] = outputs
+        if len(non_input_outputs) > 0:
+            jsonElem[CHILDREN_STRING] = non_input_outputs
+
+        # Add the JSON element to the parent            
+        jsonParent.append(jsonElem)
+
         return jsonParent
 
     def documentToJSON(self, doc: mx.Document, writeOptions: JsonWriteOptions = None) -> dict:
@@ -98,11 +129,13 @@ class MaterialXJson:
         root[JSON_MIMETYPE_KEY] = JSON_MIMETYPE
 
         # Create the document
-        documentRoot = {}
+        documentRoot = []
 
         # Add document level attributes
+        attrib = {}            
         for attrName in doc.getAttributeNames():
-            documentRoot[attrName] =  doc.getAttribute(attrName)
+            attrib[attrName] = doc.getAttribute(attrName)
+        documentRoot.append(attrib)
 
         # Add children
         for elem in doc.getChildren():
