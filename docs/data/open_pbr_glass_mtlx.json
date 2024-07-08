@@ -1,0 +1,53 @@
+{
+  "mimetype": "application/mtlx+json",
+  "materialx": {
+    "version": "1.39",
+    "colorspace": "lin_rec709",
+    "children": [
+      {
+        "name": "Glass",
+        "category": "surfacematerial",
+        "type": "material",
+        "inputs": [
+          {
+            "name": "surfaceshader",
+            "type": "surfaceshader",
+            "nodename": "open_pbr_surface_surfaceshader"
+          }
+        ]
+      },
+      {
+        "name": "open_pbr_surface_surfaceshader",
+        "category": "open_pbr_surface",
+        "type": "surfaceshader",
+        "inputs": [
+          {
+            "name": "specular_roughness",
+            "type": "float",
+            "value": "0.0"
+          },
+          {
+            "name": "specular_ior",
+            "type": "float",
+            "value": "1.52"
+          },
+          {
+            "name": "transmission_weight",
+            "type": "float",
+            "value": "1.0"
+          },
+          {
+            "name": "transmission_dispersion_abbe_number",
+            "type": "float",
+            "value": "64"
+          },
+          {
+            "name": "transmission_dispersion_scale",
+            "type": "float",
+            "value": "1.0"
+          }
+        ]
+      }
+    ]
+  }
+}

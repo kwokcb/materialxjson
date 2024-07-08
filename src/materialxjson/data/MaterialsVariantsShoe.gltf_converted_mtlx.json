@@ -1,7 +1,7 @@
 {
   "mimetype": "application/mtlx+json",
   "materialx": {
-    "version": "1.38",
+    "version": "1.39",
     "children": [
       {
         "name": "phong1SG",
@@ -24,20 +24,17 @@
           {
             "name": "metallic",
             "type": "float",
-            "nodename": "image_orm",
-            "channels": "z"
+            "nodename": "extract_orm3"
           },
           {
             "name": "roughness",
             "type": "float",
-            "nodename": "image_orm",
-            "channels": "y"
+            "nodename": "extract_orm2"
           },
           {
             "name": "occlusion",
             "type": "float",
-            "nodename": "image_occlusion",
-            "channels": "x"
+            "nodename": "image_occlusion"
           },
           {
             "name": "normal",
@@ -101,6 +98,57 @@
             "name": "vaddressmode",
             "type": "string",
             "value": "periodic"
+          }
+        ]
+      },
+      {
+        "name": "extract_orm",
+        "category": "extract",
+        "type": "float",
+        "inputs": [
+          {
+            "name": "in",
+            "type": "vector3",
+            "nodename": "image_orm"
+          },
+          {
+            "name": "index",
+            "type": "integer",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "name": "extract_orm2",
+        "category": "extract",
+        "type": "float",
+        "inputs": [
+          {
+            "name": "in",
+            "type": "vector3",
+            "nodename": "image_orm"
+          },
+          {
+            "name": "index",
+            "type": "integer",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "name": "extract_orm3",
+        "category": "extract",
+        "type": "float",
+        "inputs": [
+          {
+            "name": "in",
+            "type": "vector3",
+            "nodename": "image_orm"
+          },
+          {
+            "name": "index",
+            "type": "integer",
+            "value": "2"
           }
         ]
       },
@@ -179,20 +227,17 @@
           {
             "name": "metallic",
             "type": "float",
-            "nodename": "image_orm2",
-            "channels": "z"
+            "nodename": "extract_orm6"
           },
           {
             "name": "roughness",
             "type": "float",
-            "nodename": "image_orm2",
-            "channels": "y"
+            "nodename": "extract_orm5"
           },
           {
             "name": "occlusion",
             "type": "float",
-            "nodename": "image_occlusion2",
-            "channels": "x"
+            "nodename": "image_occlusion2"
           },
           {
             "name": "normal",
@@ -256,6 +301,57 @@
             "name": "vaddressmode",
             "type": "string",
             "value": "periodic"
+          }
+        ]
+      },
+      {
+        "name": "extract_orm4",
+        "category": "extract",
+        "type": "float",
+        "inputs": [
+          {
+            "name": "in",
+            "type": "vector3",
+            "nodename": "image_orm2"
+          },
+          {
+            "name": "index",
+            "type": "integer",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "name": "extract_orm5",
+        "category": "extract",
+        "type": "float",
+        "inputs": [
+          {
+            "name": "in",
+            "type": "vector3",
+            "nodename": "image_orm2"
+          },
+          {
+            "name": "index",
+            "type": "integer",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "name": "extract_orm6",
+        "category": "extract",
+        "type": "float",
+        "inputs": [
+          {
+            "name": "in",
+            "type": "vector3",
+            "nodename": "image_orm2"
+          },
+          {
+            "name": "index",
+            "type": "integer",
+            "value": "2"
           }
         ]
       },
@@ -334,20 +430,17 @@
           {
             "name": "metallic",
             "type": "float",
-            "nodename": "image_orm3",
-            "channels": "z"
+            "nodename": "extract_orm9"
           },
           {
             "name": "roughness",
             "type": "float",
-            "nodename": "image_orm3",
-            "channels": "y"
+            "nodename": "extract_orm8"
           },
           {
             "name": "occlusion",
             "type": "float",
-            "nodename": "image_occlusion3",
-            "channels": "x"
+            "nodename": "image_occlusion3"
           },
           {
             "name": "normal",
@@ -411,6 +504,57 @@
             "name": "vaddressmode",
             "type": "string",
             "value": "periodic"
+          }
+        ]
+      },
+      {
+        "name": "extract_orm7",
+        "category": "extract",
+        "type": "float",
+        "inputs": [
+          {
+            "name": "in",
+            "type": "vector3",
+            "nodename": "image_orm3"
+          },
+          {
+            "name": "index",
+            "type": "integer",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "name": "extract_orm8",
+        "category": "extract",
+        "type": "float",
+        "inputs": [
+          {
+            "name": "in",
+            "type": "vector3",
+            "nodename": "image_orm3"
+          },
+          {
+            "name": "index",
+            "type": "integer",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "name": "extract_orm9",
+        "category": "extract",
+        "type": "float",
+        "inputs": [
+          {
+            "name": "in",
+            "type": "vector3",
+            "nodename": "image_orm3"
+          },
+          {
+            "name": "index",
+            "type": "integer",
+            "value": "2"
           }
         ]
       },
