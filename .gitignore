@@ -1,3 +1,4 @@
 src/materialxjson.egg-info/
 dist/
+build/
 src/materialxjson/__pycache__/
