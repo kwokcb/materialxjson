@@ -273,10 +273,13 @@ display_markdown(text, raw=True)
 # 
 # A few additional examples are provided in the documentation `data` folder.
 # 
-# 1. [glTF Boombox Example](https://kwokcb.github.io/materialxjson/docs/data/gltf_pbr_boombox_mtlx.json)
+# 1. [OpenPBR Glass Example](https://kwokcb.github.io/materialxjson/docs/data/openpbr_glass_mtlx.json)
+# <img src="https://kwokcb.github.io/materialxjson/docs/images/open_pbr_glass_mtlx.json.svg" width=100% />
+# 
+# 2. [glTF Boombox Example](https://kwokcb.github.io/materialxjson/docs/data/gltf_pbr_boombox_mtlx.json)
 # <img src="https://kwokcb.github.io/materialxjson/docs/images/gltf_pbr_boombox_mtlx.json.svg" width=100% />
 # 
-# 2. [Standard Surface Tiled Wood](https://kwokcb.github.io/materialxjson/docs/data/standard_surface_wood_tiled_mtlx.json)
+# 3. [Standard Surface Tiled Wood](https://kwokcb.github.io/materialxjson/docs/data/standard_surface_wood_tiled_mtlx.json)
 # <img src="https://kwokcb.github.io/materialxjson/docs/images/standard_surface_wood_tiled_mtlx.json.svg" width=100% />
 # 
 

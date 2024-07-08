@@ -1,81 +1,131 @@
 {
   "mimetype": "application/mtlx+json",
   "materialx": {
-    "version": "1.38",
+    "version": "1.39",
     "colorspace": "lin_rec709",
     "fileprefix": "boombox/",
-    "gltf_colorimage:image_basecolor": {
-      "type": "multioutput",
-      "input:file": {
-        "type": "filename",
-        "value": "BoomBox_baseColor.png",
-        "colorspace": "srgb_texture"
-      }
-    },
-    "gltf_image:image_orm": {
-      "type": "vector3",
-      "input:file": {
-        "type": "filename",
-        "value": "BoomBox_occlusionRoughnessMetallic.png"
-      }
-    },
-    "gltf_normalmap:image_normal": {
-      "type": "vector3",
-      "input:file": {
-        "type": "filename",
-        "value": "BoomBox_normal.png"
-      }
-    },
-    "gltf_image:image_emission": {
-      "type": "color3",
-      "input:file": {
-        "type": "filename",
-        "value": "BoomBox_emissive.png",
-        "colorspace": "srgb_texture"
-      }
-    },
-    "gltf_pbr:SR_boombox": {
-      "type": "surfaceshader",
-      "input:base_color": {
-        "type": "color3",
-        "nodename": "image_basecolor",
-        "output": "outcolor"
+    "children": [
+      {
+        "name": "image_basecolor",
+        "category": "gltf_colorimage",
+        "type": "multioutput",
+        "inputs": [
+          {
+            "name": "file",
+            "type": "filename",
+            "value": "BoomBox_baseColor.png",
+            "colorspace": "srgb_texture"
+          }
+        ]
       },
-      "input:alpha": {
-        "type": "float",
-        "nodename": "image_basecolor",
-        "output": "outa"
-      },
-      "input:metallic": {
-        "type": "float",
-        "nodename": "image_orm",
-        "channels": "z"
-      },
-      "input:roughness": {
-        "type": "float",
-        "nodename": "image_orm",
-        "channels": "y"
-      },
-      "input:occlusion": {
-        "type": "float",
-        "nodename": "image_orm",
-        "channels": "x"
-      },
-      "input:normal": {
+      {
+        "name": "image_orm",
+        "category": "gltf_image",
         "type": "vector3",
-        "nodename": "image_normal"
+        "inputs": [
+          {
+            "name": "file",
+            "type": "filename",
+            "value": "BoomBox_occlusionRoughnessMetallic.png"
+          }
+        ]
       },
-      "input:emissive": {
+      {
+        "name": "image_normal",
+        "category": "gltf_normalmap",
+        "type": "vector3",
+        "inputs": [
+          {
+            "name": "file",
+            "type": "filename",
+            "value": "BoomBox_normal.png"
+          }
+        ]
+      },
+      {
+        "name": "image_emission",
+        "category": "gltf_image",
         "type": "color3",
-        "nodename": "image_emission"
-      }
-    },
-    "surfacematerial:Material_boombox": {
-      "type": "material",
-      "input:surfaceshader": {
+        "inputs": [
+          {
+            "name": "file",
+            "type": "filename",
+            "value": "BoomBox_emissive.png",
+            "colorspace": "srgb_texture"
+          }
+        ]
+      },
+      {
+        "name": "image_orm_channels",
+        "category": "separate3",
+        "type": "multioutput",
+        "inputs": [
+          {
+            "name": "in",
+            "type": "vector3",
+            "nodename": "image_orm"
+          }
+        ]
+      },
+      {
+        "name": "SR_boombox",
+        "category": "gltf_pbr",
         "type": "surfaceshader",
-        "nodename": "SR_boombox"
+        "inputs": [
+          {
+            "name": "base_color",
+            "type": "color3",
+            "nodename": "image_basecolor",
+            "output": "outcolor"
+          },
+          {
+            "name": "alpha",
+            "type": "float",
+            "nodename": "image_basecolor",
+            "output": "outa"
+          },
+          {
+            "name": "metallic",
+            "type": "float",
+            "nodename": "image_orm_channels",
+            "output": "outz"
+          },
+          {
+            "name": "roughness",
+            "type": "float",
+            "nodename": "image_orm_channels",
+            "output": "outy"
+          },
+          {
+            "name": "occlusion",
+            "type": "float",
+            "nodename": "image_orm_channels",
+            "output": "outx"
+          },
+          {
+            "name": "normal",
+            "type": "vector3",
+            "nodename": "image_normal"
+          },
+          {
+            "name": "emissive",
+            "type": "color3",
+            "nodename": "image_emission"
+          }
+        ]
+      },
+      {
+        "name": "Material_boombox",
+        "category": "surfacematerial",
+        "type": "material",
+        "inputs": [
+          {
+            "name": "surfaceshader",
+            "type": "surfaceshader",
+            "nodename": "SR_boombox"
+          }
+        ]
       }
-    }
+    ]
   }
 }

@@ -1,85 +1,124 @@
 {
   "mimetype": "application/mtlx+json",
   "materialx": {
-    "version": "1.38",
+    "version": "1.39",
     "colorspace": "lin_rec709",
-    "nodegraph:NG_wood1": {
-      "fileprefix": "../../../Images/",
-      "tiledimage:image_color": {
-        "type": "color3",
-        "input:file": {
-          "type": "filename",
-          "value": "wood_color.jpg",
-          "colorspace": "srgb_texture"
-        },
-        "input:uvtiling": {
-          "type": "vector2",
-          "value": "4.0, 4.0"
-        }
+    "children": [
+      {
+        "name": "NG_wood1",
+        "category": "nodegraph",
+        "fileprefix": "../../../Images/",
+        "outputs": [
+          {
+            "name": "out_color",
+            "type": "color3",
+            "nodename": "image_color"
+          },
+          {
+            "name": "out_roughness",
+            "type": "float",
+            "nodename": "image_roughness"
+          }
+        ],
+        "children": [
+          {
+            "name": "image_color",
+            "category": "tiledimage",
+            "type": "color3",
+            "inputs": [
+              {
+                "name": "file",
+                "type": "filename",
+                "value": "wood_color.jpg",
+                "colorspace": "srgb_texture"
+              },
+              {
+                "name": "uvtiling",
+                "type": "vector2",
+                "value": "4.0, 4.0"
+              }
+            ]
+          },
+          {
+            "name": "image_roughness",
+            "category": "tiledimage",
+            "type": "float",
+            "inputs": [
+              {
+                "name": "file",
+                "type": "filename",
+                "value": "wood_roughness.jpg"
+              },
+              {
+                "name": "uvtiling",
+                "type": "vector2",
+                "value": "4.0, 4.0"
+              }
+            ]
+          }
+        ]
       },
-      "tiledimage:image_roughness": {
-        "type": "float",
-        "input:file": {
-          "type": "filename",
-          "value": "wood_roughness.jpg"
-        },
-        "input:uvtiling": {
-          "type": "vector2",
-          "value": "4.0, 4.0"
-        }
-      },
-      "output:out_color": {
-        "type": "color3",
-        "nodename": "image_color"
-      },
-      "output:out_roughness": {
-        "type": "float",
-        "nodename": "image_roughness"
-      }
-    },
-    "standard_surface:SR_wood1": {
-      "type": "surfaceshader",
-      "input:base": {
-        "type": "float",
-        "value": "1"
-      },
-      "input:base_color": {
-        "type": "color3",
-        "nodegraph": "NG_wood1",
-        "output": "out_color"
-      },
-      "input:specular": {
-        "type": "float",
-        "value": "0.4"
-      },
-      "input:specular_roughness": {
-        "type": "float",
-        "nodegraph": "NG_wood1",
-        "output": "out_roughness"
-      },
-      "input:specular_anisotropy": {
-        "type": "float",
-        "value": "0.5"
-      },
-      "input:coat": {
-        "type": "float",
-        "value": "0.1"
-      },
-      "input:coat_roughness": {
-        "type": "float",
-        "value": "0.2"
-      },
-      "input:coat_anisotropy": {
-        "type": "float",
-        "value": "0.5"
-      }
-    },
-    "surfacematerial:Tiled_Wood": {
-      "type": "material",
-      "input:surfaceshader": {
+      {
+        "name": "SR_wood1",
+        "category": "standard_surface",
         "type": "surfaceshader",
-        "nodename": "SR_wood1"
+        "inputs": [
+          {
+            "name": "base",
+            "type": "float",
+            "value": "1"
+          },
+          {
+            "name": "base_color",
+            "type": "color3",
+            "nodegraph": "NG_wood1",
+            "output": "out_color"
+          },
+          {
+            "name": "specular",
+            "type": "float",
+            "value": "0.4"
+          },
+          {
+            "name": "specular_roughness",
+            "type": "float",
+            "nodegraph": "NG_wood1",
+            "output": "out_roughness"
+          },
+          {
+            "name": "specular_anisotropy",
+            "type": "float",
+            "value": "0.5"
+          },
+          {
+            "name": "coat",
+            "type": "float",
+            "value": "0.1"
+          },
+          {
+            "name": "coat_roughness",
+            "type": "float",
+            "value": "0.2"
+          },
+          {
+            "name": "coat_anisotropy",
+            "type": "float",
+            "value": "0.5"
+          }
+        ]
+      },
+      {
+        "name": "Tiled_Wood",
+        "category": "surfacematerial",
+        "type": "material",
+        "inputs": [
+          {
+            "name": "surfaceshader",
+            "type": "surfaceshader",
+            "nodename": "SR_wood1"
+          }
+        ]
       }
-    }
+    ]
   }
 }
