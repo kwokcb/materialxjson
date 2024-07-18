@@ -16,6 +16,11 @@ The `JSON` representation is lossless and is targeted at integrations which pref
 
 Visit the **[home page](https://kwokcb.github.io/materialxjson/index.html)** for For further information about this package, including links to API documentation and a Jupyter notebook with sample code that expands on the basic *Usage* example.
 
+## Integrations
+
+A plugin using this package is available as a sample as part of QuilitX as of **this change**
+[https://github.com/PrismPipeline/QuiltiX/commit/e34ebfec22a334d323803b6797beb8db581ebb18].
+
 ## Installation
 
 The Python package is losted on **[PyPi](https://pypi.org/project/materialxjson)** and can be installed

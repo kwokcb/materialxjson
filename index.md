@@ -21,6 +21,17 @@ The package can be downloaded from **[PyPi](https://pypi.org/project/materialxjs
 * **Python Package**: Details about how to use this package can be found **[here](https://kwokcb.github.io/materialxjson/README.html)**.
 * **API Documentation**): Python interface documentation can be found **[here](https://kwokcb.github.io/materialxjson/docs/html/index.html)**.
 
+## Integrations
+
+Below is a snapshot from the QuiltiX plugin which uses this package:
+
+<img src="https://kwokcb.github.io/materialxjson/docs/images/QuiltiX_plugin_JSON.png">. 
+
+Shown is the JSON text preview dialog which allows the user to view the JSON representation of the MaterialX document.
+
+The plugin code is available as a sample which ships with QuiltiX [here](https://github.com/PrismPipeline/QuiltiX/blob/main/sample_plugins/materialxjson/plugin.py)
+
+
 ## Examples
 
 A Jupyter notebook with examples can be found **[here](https://kwokcb.github.io/materialxjson/docs/examples.html)**.
