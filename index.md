@@ -47,8 +47,9 @@ The follow are the JSON representations for examples included with the package:
         <img src='https://kwokcb.github.io/materialxjson/images/standard_surface_default.svg' width=100%>
     </details>
 
+## Repository
 
-
+- GitHub: [materialxjson](https://github.com/kwokcb/materialxjson)
 
 
 
