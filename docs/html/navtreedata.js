@@ -27,26 +27,27 @@ var NAVTREE =
   [ "MaterialXJSON", "index.html", [
     [ "Package", "index.html#autotoc_md1", null ],
     [ "Documentation", "index.html#autotoc_md2", null ],
-    [ "Examples", "index.html#autotoc_md3", null ],
-    [ "MaterialX JSON I/O", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html", [
-      [ "Contents", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md5", null ],
-      [ "Introduction", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md6", null ],
-      [ "Documentation", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md7", null ],
-      [ "Installation", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md8", null ],
-      [ "Usage", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md9", [
-        [ "Package Setup", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md10", null ],
-        [ "XML to JSON Format Conversion", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md11", null ],
-        [ "JSON to XML Format Conversion", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md12", null ]
+    [ "Integrations", "index.html#autotoc_md3", null ],
+    [ "Examples", "index.html#autotoc_md4", null ],
+    [ "MaterialX JSON I/O", "md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html", [
+      [ "Contents", "md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md6", null ],
+      [ "Introduction", "md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md7", null ],
+      [ "Documentation", "md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md8", null ],
+      [ "Integrations", "md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md9", null ],
+      [ "Installation", "md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md10", null ],
+      [ "Usage", "md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md11", [
+        [ "Package Setup", "md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md12", null ],
+        [ "XML to JSON Format Conversion", "md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md13", null ],
+        [ "JSON to XML Format Conversion", "md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md14", null ]
       ] ],
-      [ "Caveats", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md13", null ],
-      [ "Author", "md__d___work_materialx_materialxjson__r_e_a_d_m_e.html#autotoc_md14", null ]
+      [ "Caveats", "md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md15", null ],
+      [ "Author", "md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md16", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -56,13 +57,16 @@ var NAVTREE =
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ]
       ] ]
+    ] ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-""
+"____init_____8py_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
