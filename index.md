@@ -5,7 +5,7 @@ This is the home page for the `materialxjson` Python package which provides supp
 ```mermaid
 graph LR;
 
-MaterialX[ MaterialX <img src='https://kwokcb.github.io/materialxjson/images/MaterialX_logo.png' style='width: 32px' />] <-----> JSON[(JSON <img src='https://kwokcb.github.io/materialxjson/images/JSON_logo.svg' tyle='width: 322px' /> )]
+MaterialX[ MaterialX <img src='https://kwokcb.github.io/materialxjson/images/MaterialX_logo.png' style='width: 32px' />] <-----> JSON[(JSON <img src='https://kwokcb.github.io/materialxjson/images/JSON_logo.svg' tyle='width: 16px' /> )]
 
 MaterialX <-----> XML[( XML <img src='https://kwokcb.github.io/materialxjson/images/XML_logo.svg' style='width: 32px' /> )]
 ```

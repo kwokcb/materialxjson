@@ -1,14 +1,17 @@
-# %% [markdown]
+#!/usr/bin/env python
+# coding: utf-8
+
 # # MaterialXJSON Examples
 # 
 # The examples below demonstrate how to use the MaterialXJSON library to read and write MaterialX documents in JSON format and convert between the XML and JSON representations.
 # 
 # ## Setup
 
-# %% [markdown]
 # The following utility is provided to display formatted data.
 
-# %%
+# In[1]:
+
+
 from IPython.display import display_markdown
 
 def displaySource(title, string, language='xml', open=True):
@@ -17,7 +20,7 @@ def displaySource(title, string, language='xml', open=True):
     text = text + '><summary><b>' + title + '</b></summary>\n\n' + '```' + language + '\n' + string + '\n```\n' + '</details>\n' 
     display_markdown(text, raw=True)
 
-# %% [markdown]
+
 # The basic requirement is to import the following packages:
 # - `materialxjson` 
 # - `MaterialX` 
@@ -25,7 +28,9 @@ def displaySource(title, string, language='xml', open=True):
 # 
 # In the example below we import the packages and display the version of each. Additionaly we query the help on the `core` module of the `materialxjson` package.
 
-# %%
+# In[2]:
+
+
 import MaterialX as mx
 from materialxjson import core
 import json
@@ -33,17 +38,19 @@ import materialxjson as mtlxjson
 import sys, io
 
 stdout = sys.stdout
-print("MaterialX version: " + mx.getVersionString())
-print("JSON version: " + json.__version__)
-print("MaterialXJSON version: " + mtlxjson.__version__)
+print("- MaterialX version: " + mx.getVersionString())
+print("- JSON version: " + json.__version__)
+print("- MaterialXJSON version: " + mtlxjson.__version__)
 
 help(core.MaterialXJson)
 help(core.Util)
 
-# %% [markdown]
+
 # ## Package Resources
 
-# %%
+# In[3]:
+
+
 import pkg_resources
 
 directory_name = "data"  
@@ -54,13 +61,14 @@ for file in files:
 
 displaySource('Available data files', result, 'text', True)
 
-# %% [markdown]
+
 # ## JSON to XML Conversion
 
-# %% [markdown]
 # ### XML to JSON Object
 
-# %%
+# In[4]:
+
+
 import pkg_resources
 import MaterialX as mx
 from materialxjson import core
@@ -82,10 +90,11 @@ jsondump = core.Util.jsonToJSONString(jsonObject, 2)
 displaySource('Document to JSON', jsondump, 'json', True)
 
 
-# %% [markdown]
 # ### XML to JSON String (Direct)
 
-# %%
+# In[5]:
+
+
 import pkg_resources
 import MaterialX as mx
 from materialxjson import core
@@ -104,7 +113,7 @@ mx.readFromXmlFile(doc, mtlxFileName)
 jsonString = mtlxjson.documentToJSONString(doc)
 displaySource('Document to JSON String (direct)', jsonString, 'json', True)
 
-# %% [markdown]
+
 # ### XML to JSON Options
 # 
 # There are currently a few options available for XML to JSON conversion. These include:
@@ -117,7 +126,9 @@ displaySource('Document to JSON String (direct)', jsonString, 'json', True)
 # 
 # The `mtlx2json` utility script exposes options as command line arguments.
 
-# %%
+# In[6]:
+
+
 import pkg_resources
 import MaterialX as mx
 from materialxjson import core
@@ -146,13 +157,14 @@ writeOptions.elementPredicate = skipMaterial # Skip materials
 jsonString = mtlxjson.documentToJSONString(doc, writeOptions)
 displaySource('Document to JSON String (direct)', jsonString, 'json', True)
 
-# %% [markdown]
+
 # ## JSON to XML Conversion
 
-# %% [markdown]
 # ### Loading from JSON File
 
-# %%
+# In[7]:
+
+
 import pkg_resources
 import MaterialX as mx
 from materialxjson import core
@@ -174,10 +186,12 @@ mtlxjson.documentFromJSON(jsonObject, doc)
 docstring = core.Util.documentToXMLString(doc)
 displaySource('XML from JSON', docstring, 'xml', True)
 
-# %% [markdown]
+
 # ### Loading from JSON String
 
-# %%
+# In[8]:
+
+
 import pkg_resources
 import MaterialX as mx
 from materialxjson import core
@@ -200,13 +214,15 @@ mtlxjson.documentFromJSONString(jsonString, doc)
 docstring = core.Util.documentToXMLString(doc)
 displaySource('XML from JSON String', docstring, 'xml', True)
 
-# %% [markdown]
+
 # ### JSON to MaterialX Options
 # 
 # The options available for JSON to XML conversion include:
 # 1. `upgradeVersion` - A boolean indicating whether to upgrade the version of the MaterialX document to the latest version. Default is `True`.
 
-# %%
+# In[9]:
+
+
 import pkg_resources
 import MaterialX as mx
 from materialxjson import core
@@ -229,12 +245,14 @@ readOptions = core.JsonReadOptions()
 readOptions.upgradeVersion = False # Do not upgrade version
 mtlxjson.documentFromJSONString(jsonString, doc, readOptions)
 
-# %% [markdown]
+
 # ## Comparisons 
 # 
 # This example shows the [gltf Sample Models "shoe" model](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/MaterialsVariantsShoe) read in XML format, and converted to JSON format. The sample mode was converted from gltf to MaterialX XML using the [gltf2MaterialX](https://github.com/kwokcb/materialxgltf/) converter. 
 
-# %%
+# In[10]:
+
+
 import pkg_resources
 import MaterialX as mx
 from materialxjson import core
@@ -268,7 +286,6 @@ text = '<details open><summary><b>JSON / XML Comparison</b></summary>\n\n' + out
 display_markdown(text, raw=True)
 
 
-# %% [markdown]
 # ## Additional Examples
 # 
 # A few additional examples are provided in the documentation `data` folder.
@@ -282,5 +299,3 @@ display_markdown(text, raw=True)
 # 3. [Standard Surface Tiled Wood](https://kwokcb.github.io/materialxjson/docs/data/standard_surface_wood_tiled_mtlx.json)
 # <img src="https://kwokcb.github.io/materialxjson/docs/images/standard_surface_wood_tiled_mtlx.json.svg" width=100% />
 # 
-
-
