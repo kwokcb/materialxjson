@@ -4,14 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "materialxjson"
-version = "1.39"
+version = "1.39.2"
 authors = [
   { name="Bernard Kwok", email="kwokcb@gmail.com" },
 ]
+
 description = "Utilities handling I/O of MaterialX in JSON format"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {file = "LICENSE"}
+
 classifiers = [
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
@@ -19,13 +21,18 @@ classifiers = [
     "Operating System :: OS Independent",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
+
 dependencies = [
-    "materialx>=1.39"
+    "materialx>=1.39.2"
 ]
+
 [tool.setuptools.packages.find]
 where = ["src"]
 [tool.setuptools.package-data]
 "materialxjson.data" = ["*.*"]
+
+[project.scripts]
+materialxjson = "materialxjson.__main__:main"
 
 [project.urls]
 "Homepage" = "https://kwokcb.github.io/materialxjson/"

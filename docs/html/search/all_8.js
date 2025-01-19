@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['json_20format_20conversion_0',['XML to JSON Format Conversion',['../md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md13',1,'']]],
-  ['json_20i_20o_1',['MaterialX JSON I/O',['../md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html',1,'']]],
-  ['json_20to_20xml_20format_20conversion_2',['JSON to XML Format Conversion',['../md__2_users_2bernardkwok_2work_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md14',1,'']]],
+  ['json_20format_20conversion_0',['XML to JSON Format Conversion',['../md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md14',1,'']]],
+  ['json_20i_20o_1',['MaterialX JSON I/O',['../md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html',1,'']]],
+  ['json_20to_20xml_20format_20conversion_2',['JSON to XML Format Conversion',['../md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md15',1,'']]],
   ['jsonfiletoxml_3',['jsonFileToXml',['../classmaterialxjson_1_1core_1_1_util.html#a2e4a78d17a7617f59c6a16c1f69a41fb',1,'materialxjson::core::Util']]],
   ['jsonfiletoxmlfile_4',['jsonFileToXmlFile',['../classmaterialxjson_1_1core_1_1_util.html#aae13a4aa250d9c8e604bb00b9d52038a',1,'materialxjson::core::Util']]],
   ['jsonreadoptions_5',['JsonReadOptions',['../classmaterialxjson_1_1core_1_1_json_read_options.html',1,'materialxjson::core']]],
