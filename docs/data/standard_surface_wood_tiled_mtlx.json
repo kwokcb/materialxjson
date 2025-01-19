@@ -8,18 +8,6 @@
         "name": "NG_wood1",
         "category": "nodegraph",
         "fileprefix": "../../../Images/",
-        "outputs": [
-          {
-            "name": "out_color",
-            "type": "color3",
-            "nodename": "image_color"
-          },
-          {
-            "name": "out_roughness",
-            "type": "float",
-            "nodename": "image_roughness"
-          }
-        ],
         "children": [
           {
             "name": "image_color",
@@ -55,6 +43,18 @@
                 "value": "4.0, 4.0"
               }
             ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "out_color",
+            "type": "color3",
+            "nodename": "image_color"
+          },
+          {
+            "name": "out_roughness",
+            "type": "float",
+            "nodename": "image_roughness"
           }
         ]
       },

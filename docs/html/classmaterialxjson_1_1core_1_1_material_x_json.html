@@ -445,17 +445,17 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  187</span>                    name = child[<span class="stringliteral">&#39;name&#39;</span>]</div>
 <div class="line"><span class="lineno">  188</span>                    childElem = elem.addChildOfCategory(category, name)</div>
 <div class="line"><span class="lineno">  189</span>                    self.elementFromJSON(child, childElem)</div>
-<div class="line"><span class="lineno">  190</span> </div>
-<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">elif</span> key == OUTPUTS_STRING:</div>
+<div class="line"><span class="lineno">  190</span>                </div>
+<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">elif</span> key == CHILDREN_STRING:</div>
 <div class="line"><span class="lineno">  192</span>                <span class="keywordflow">for</span> child <span class="keywordflow">in</span> value:</div>
-<div class="line"><span class="lineno">  193</span>                    category = <span class="stringliteral">&#39;output&#39;</span></div>
+<div class="line"><span class="lineno">  193</span>                    category = child[<span class="stringliteral">&#39;category&#39;</span>]</div>
 <div class="line"><span class="lineno">  194</span>                    name = child[<span class="stringliteral">&#39;name&#39;</span>]</div>
 <div class="line"><span class="lineno">  195</span>                    childElem = elem.addChildOfCategory(category, name)</div>
 <div class="line"><span class="lineno">  196</span>                    self.elementFromJSON(child, childElem)</div>
-<div class="line"><span class="lineno">  197</span>                </div>
-<div class="line"><span class="lineno">  198</span>            <span class="keywordflow">elif</span> key == CHILDREN_STRING:</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>            <span class="keywordflow">elif</span> key == OUTPUTS_STRING:</div>
 <div class="line"><span class="lineno">  199</span>                <span class="keywordflow">for</span> child <span class="keywordflow">in</span> value:</div>
-<div class="line"><span class="lineno">  200</span>                    category = child[<span class="stringliteral">&#39;category&#39;</span>]</div>
+<div class="line"><span class="lineno">  200</span>                    category = <span class="stringliteral">&#39;output&#39;</span></div>
 <div class="line"><span class="lineno">  201</span>                    name = child[<span class="stringliteral">&#39;name&#39;</span>]</div>
 <div class="line"><span class="lineno">  202</span>                    childElem = elem.addChildOfCategory(category, name)</div>
 <div class="line"><span class="lineno">  203</span>                    self.elementFromJSON(child, childElem)</div>
@@ -546,10 +546,10 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  107</span>        <span class="comment"># Add inputs, outputs and other children</span></div>
 <div class="line"><span class="lineno">  108</span>        <span class="keywordflow">if</span> len(inputs) &gt; 0:</div>
 <div class="line"><span class="lineno">  109</span>            jsonElem[INPUTS_STRING] = inputs</div>
-<div class="line"><span class="lineno">  110</span>        <span class="keywordflow">if</span> len(outputs) &gt; 0:</div>
-<div class="line"><span class="lineno">  111</span>            jsonElem[OUTPUTS_STRING] = outputs</div>
-<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span> len(non_input_outputs) &gt; 0:</div>
-<div class="line"><span class="lineno">  113</span>            jsonElem[CHILDREN_STRING] = non_input_outputs</div>
+<div class="line"><span class="lineno">  110</span>        <span class="keywordflow">if</span> len(non_input_outputs) &gt; 0:</div>
+<div class="line"><span class="lineno">  111</span>            jsonElem[CHILDREN_STRING] = non_input_outputs</div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span> len(outputs) &gt; 0:</div>
+<div class="line"><span class="lineno">  113</span>            jsonElem[OUTPUTS_STRING] = outputs</div>
 <div class="line"><span class="lineno">  114</span> </div>
 <div class="line"><span class="lineno">  115</span>        <span class="comment"># Add the JSON element to the parent            </span></div>
 <div class="line"><span class="lineno">  116</span>        jsonParent.append(jsonElem)</div>

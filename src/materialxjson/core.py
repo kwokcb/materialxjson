@@ -107,10 +107,10 @@ class MaterialXJson:
         # Add inputs, outputs and other children
         if len(inputs) > 0:
             jsonElem[INPUTS_STRING] = inputs
-        if len(outputs) > 0:
-            jsonElem[OUTPUTS_STRING] = outputs
         if len(non_input_outputs) > 0:
             jsonElem[CHILDREN_STRING] = non_input_outputs
+        if len(outputs) > 0:
+            jsonElem[OUTPUTS_STRING] = outputs
 
         # Add the JSON element to the parent            
         jsonParent.append(jsonElem)
@@ -187,17 +187,17 @@ class MaterialXJson:
                     name = child['name']
                     childElem = elem.addChildOfCategory(category, name)
                     self.elementFromJSON(child, childElem)
-
-            elif key == OUTPUTS_STRING:
-                for child in value:
-                    category = 'output'
-                    name = child['name']
-                    childElem = elem.addChildOfCategory(category, name)
-                    self.elementFromJSON(child, childElem)
                 
             elif key == CHILDREN_STRING:
                 for child in value:
                     category = child['category']
+                    name = child['name']
+                    childElem = elem.addChildOfCategory(category, name)
+                    self.elementFromJSON(child, childElem)
+
+            elif key == OUTPUTS_STRING:
+                for child in value:
+                    category = 'output'
                     name = child['name']
                     childElem = elem.addChildOfCategory(category, name)
                     self.elementFromJSON(child, childElem)
