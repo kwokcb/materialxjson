@@ -30,19 +30,19 @@ var NAVTREE =
     [ "Integrations", "index.html#autotoc_md3", null ],
     [ "Examples", "index.html#autotoc_md4", null ],
     [ "Repository", "index.html#autotoc_md5", null ],
-    [ "MaterialX JSON I/O", "md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html", [
-      [ "Contents", "md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md7", null ],
-      [ "Introduction", "md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md8", null ],
-      [ "Documentation", "md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md9", null ],
-      [ "Integrations", "md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md10", null ],
-      [ "Installation", "md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md11", null ],
-      [ "Usage", "md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md12", [
-        [ "Package Setup", "md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md13", null ],
-        [ "XML to JSON Format Conversion", "md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md14", null ],
-        [ "JSON to XML Format Conversion", "md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md15", null ]
+    [ "MaterialX JSON I/O", "md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html", [
+      [ "Contents", "md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md7", null ],
+      [ "Introduction", "md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md8", null ],
+      [ "Documentation", "md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md9", null ],
+      [ "Integrations", "md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md10", null ],
+      [ "Installation", "md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md11", null ],
+      [ "Usage", "md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md12", [
+        [ "Package Setup", "md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md13", null ],
+        [ "XML to JSON Format Conversion", "md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md14", null ],
+        [ "JSON to XML Format Conversion", "md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md15", null ]
       ] ],
-      [ "Caveats", "md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md16", null ],
-      [ "Author", "md__d_1_2work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md17", null ]
+      [ "Caveats", "md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md16", null ],
+      [ "Author", "md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md17", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

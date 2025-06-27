@@ -149,7 +149,7 @@ def skipMaterial(element):
 
 # Set write options
 writeOptions = core.JsonWriteOptions()
-writeOptions.indent = None # No indentation
+writeOptions.indent = 2 # No indentation
 writeOptions.separators = (',', ':') # No whitespace
 writeOptions.elementPredicate = skipMaterial # Skip materials
 

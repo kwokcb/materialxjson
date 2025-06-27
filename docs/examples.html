@@ -7541,9 +7541,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display_markdown</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_markdown</span>
 
-<span class="k">def</span> <span class="nf">displaySource</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">'xml'</span><span class="p">,</span> <span class="nb">open</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">displaySource</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">'xml'</span><span class="p">,</span> <span class="nb">open</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="n">text</span> <span class="o">=</span> <span class="s1">'&lt;details '</span>
     <span class="n">text</span> <span class="o">=</span> <span class="n">text</span> <span class="o">+</span> <span class="p">(</span><span class="s1">' open'</span> <span class="k">if</span> <span class="nb">open</span> <span class="k">else</span> <span class="s1">''</span><span class="p">)</span> 
     <span class="n">text</span> <span class="o">=</span> <span class="n">text</span> <span class="o">+</span> <span class="s1">'&gt;&lt;summary&gt;&lt;b&gt;'</span> <span class="o">+</span> <span class="n">title</span> <span class="o">+</span> <span class="s1">'&lt;/b&gt;&lt;/summary&gt;</span><span class="se">\n\n</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">'```'</span> <span class="o">+</span> <span class="n">language</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">```</span><span class="se">\n</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">'&lt;/details&gt;</span><span class="se">\n</span><span class="s1">'</span> 
@@ -7578,11 +7578,11 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">MaterialX</span> <span class="k">as</span> <span class="nn">mx</span>
-<span class="kn">from</span> <span class="nn">materialxjson</span> <span class="kn">import</span> <span class="n">core</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">materialxjson</span> <span class="k">as</span> <span class="nn">mtlxjson</span>
-<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">io</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">MaterialX</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">materialxjson</span><span class="w"> </span><span class="kn">import</span> <span class="n">core</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">materialxjson</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mtlxjson</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span><span class="o">,</span><span class="w"> </span><span class="nn">io</span>
 
 <span class="n">stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"- MaterialX version: "</span> <span class="o">+</span> <span class="n">mx</span><span class="o">.</span><span class="n">getVersionString</span><span class="p">())</span>
@@ -7603,9 +7603,9 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>- MaterialX version: 1.39.2
+<pre>- MaterialX version: 1.39.3
 - JSON version: 2.0.9
-- MaterialXJSON version: 1.39.2
+- MaterialXJSON version: 1.39.3
 Help on class MaterialXJson in module materialxjson.core:
 
 class MaterialXJson(builtins.object)
@@ -7761,7 +7761,7 @@ class Util(builtins.object)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pkg_resources</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pkg_resources</span>
 
 <span class="n">directory_name</span> <span class="o">=</span> <span class="s2">"data"</span>  
 <span class="n">files</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_listdir</span><span class="p">(</span><span class="s1">'materialxjson'</span><span class="p">,</span> <span class="n">directory_name</span><span class="p">)</span>
@@ -7825,10 +7825,10 @@ standard_surface_default_mtlx_json.mtlx
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pkg_resources</span>
-<span class="kn">import</span> <span class="nn">MaterialX</span> <span class="k">as</span> <span class="nn">mx</span>
-<span class="kn">from</span> <span class="nn">materialxjson</span> <span class="kn">import</span> <span class="n">core</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display_markdown</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pkg_resources</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">MaterialX</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">materialxjson</span><span class="w"> </span><span class="kn">import</span> <span class="n">core</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_markdown</span>
 
 <span class="c1"># Create I/O handler</span>
 <span class="n">mtlxjson</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">MaterialXJson</span><span class="p">()</span>
@@ -8112,10 +8112,10 @@ standard_surface_default_mtlx_json.mtlx
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pkg_resources</span>
-<span class="kn">import</span> <span class="nn">MaterialX</span> <span class="k">as</span> <span class="nn">mx</span>
-<span class="kn">from</span> <span class="nn">materialxjson</span> <span class="kn">import</span> <span class="n">core</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display_markdown</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pkg_resources</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">MaterialX</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">materialxjson</span><span class="w"> </span><span class="kn">import</span> <span class="n">core</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_markdown</span>
 
 <span class="c1"># Create I/O handler</span>
 <span class="n">mtlxjson</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">MaterialXJson</span><span class="p">()</span>
@@ -8404,10 +8404,10 @@ standard_surface_default_mtlx_json.mtlx
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pkg_resources</span>
-<span class="kn">import</span> <span class="nn">MaterialX</span> <span class="k">as</span> <span class="nn">mx</span>
-<span class="kn">from</span> <span class="nn">materialxjson</span> <span class="kn">import</span> <span class="n">core</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display_markdown</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pkg_resources</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">MaterialX</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">materialxjson</span><span class="w"> </span><span class="kn">import</span> <span class="n">core</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_markdown</span>
 
 <span class="c1"># Create I/O handler</span>
 <span class="n">mtlxjson</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">MaterialXJson</span><span class="p">()</span>
@@ -8418,13 +8418,13 @@ standard_surface_default_mtlx_json.mtlx
 <span class="n">doc</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">createDocument</span><span class="p">()</span>
 <span class="n">mx</span><span class="o">.</span><span class="n">readFromXmlFile</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">mtlxFileName</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">skipMaterial</span><span class="p">(</span><span class="n">element</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">skipMaterial</span><span class="p">(</span><span class="n">element</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'- Skip material element: '</span> <span class="o">+</span> <span class="n">element</span><span class="o">.</span><span class="n">getName</span><span class="p">())</span>
     <span class="k">return</span> <span class="n">element</span><span class="o">.</span><span class="n">getCategory</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">'surfacematerial'</span>
 
 <span class="c1"># Set write options</span>
 <span class="n">writeOptions</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">JsonWriteOptions</span><span class="p">()</span>
-<span class="n">writeOptions</span><span class="o">.</span><span class="n">indent</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># No indentation</span>
+<span class="n">writeOptions</span><span class="o">.</span><span class="n">indent</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># No indentation</span>
 <span class="n">writeOptions</span><span class="o">.</span><span class="n">separators</span> <span class="o">=</span> <span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">':'</span><span class="p">)</span> <span class="c1"># No whitespace</span>
 <span class="n">writeOptions</span><span class="o">.</span><span class="n">elementPredicate</span> <span class="o">=</span> <span class="n">skipMaterial</span> <span class="c1"># Skip materials</span>
 
@@ -8453,7 +8453,217 @@ standard_surface_default_mtlx_json.mtlx
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
 <details open=""><summary><b>Document to JSON String (direct)</b></summary>
-<div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">"mimetype"</span><span class="p">:</span><span class="s2">"application/mtlx+json"</span><span class="p">,</span><span class="nt">"materialx"</span><span class="p">:{</span><span class="nt">"version"</span><span class="p">:</span><span class="s2">"1.39"</span><span class="p">,</span><span class="nt">"colorspace"</span><span class="p">:</span><span class="s2">"lin_rec709"</span><span class="p">,</span><span class="nt">"children"</span><span class="p">:[{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"SR_default"</span><span class="p">,</span><span class="nt">"category"</span><span class="p">:</span><span class="s2">"standard_surface"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"surfaceshader"</span><span class="p">,</span><span class="nt">"inputs"</span><span class="p">:[{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"base"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"base_color"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0.8, 0.8, 0.8"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"diffuse_roughness"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"specular"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"specular_color"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"specular_roughness"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0.2"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"specular_IOR"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1.5"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"specular_anisotropy"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"specular_rotation"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"metalness"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission_color"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission_depth"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission_scatter"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0, 0, 0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission_scatter_anisotropy"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission_dispersion"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission_extra_roughness"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"subsurface"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"subsurface_color"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"subsurface_radius"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"subsurface_scale"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"subsurface_anisotropy"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"sheen"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"sheen_color"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"sheen_roughness"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0.3"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"thin_walled"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"boolean"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"false"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_color"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_roughness"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0.1"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_anisotropy"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0.0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_rotation"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0.0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_IOR"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1.5"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_affect_color"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_affect_roughness"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"thin_film_thickness"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"thin_film_IOR"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1.5"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"emission"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"emission_color"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span><span class="p">},{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"opacity"</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span><span class="p">}]}]}}</span>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"mimetype"</span><span class="p">:</span><span class="s2">"application/mtlx+json"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"materialx"</span><span class="p">:{</span>
+<span class="w">    </span><span class="nt">"version"</span><span class="p">:</span><span class="s2">"1.39"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"colorspace"</span><span class="p">:</span><span class="s2">"lin_rec709"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"children"</span><span class="p">:[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"SR_default"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"category"</span><span class="p">:</span><span class="s2">"standard_surface"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"surfaceshader"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"inputs"</span><span class="p">:[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"base"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1.0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"base_color"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0.8, 0.8, 0.8"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"diffuse_roughness"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"specular"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"specular_color"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"specular_roughness"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0.2"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"specular_IOR"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1.5"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"specular_anisotropy"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"specular_rotation"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"metalness"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission_color"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission_depth"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission_scatter"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0, 0, 0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission_scatter_anisotropy"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission_dispersion"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"transmission_extra_roughness"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"subsurface"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"subsurface_color"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"subsurface_radius"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"subsurface_scale"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"subsurface_anisotropy"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"sheen"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"sheen_color"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"sheen_roughness"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0.3"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"thin_walled"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"boolean"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"false"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_color"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_roughness"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0.1"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_anisotropy"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0.0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_rotation"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0.0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_IOR"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1.5"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_affect_color"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"coat_affect_roughness"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"thin_film_thickness"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"thin_film_IOR"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1.5"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"emission"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"float"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"0"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"emission_color"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"opacity"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"color3"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"1, 1, 1"</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </details>
 </div>
@@ -8490,10 +8700,10 @@ standard_surface_default_mtlx_json.mtlx
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pkg_resources</span>
-<span class="kn">import</span> <span class="nn">MaterialX</span> <span class="k">as</span> <span class="nn">mx</span>
-<span class="kn">from</span> <span class="nn">materialxjson</span> <span class="kn">import</span> <span class="n">core</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display_markdown</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pkg_resources</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">MaterialX</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">materialxjson</span><span class="w"> </span><span class="kn">import</span> <span class="n">core</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_markdown</span>
 
 <span class="c1"># Create I/O handler</span>
 <span class="n">mtlxjson</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">MaterialXJson</span><span class="p">()</span>
@@ -8602,10 +8812,10 @@ standard_surface_default_mtlx_json.mtlx
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pkg_resources</span>
-<span class="kn">import</span> <span class="nn">MaterialX</span> <span class="k">as</span> <span class="nn">mx</span>
-<span class="kn">from</span> <span class="nn">materialxjson</span> <span class="kn">import</span> <span class="n">core</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display_markdown</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pkg_resources</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">MaterialX</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">materialxjson</span><span class="w"> </span><span class="kn">import</span> <span class="n">core</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_markdown</span>
 
 <span class="c1"># Create I/O handler</span>
 <span class="n">mtlxjson</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">MaterialXJson</span><span class="p">()</span>
@@ -8718,10 +8928,10 @@ standard_surface_default_mtlx_json.mtlx
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pkg_resources</span>
-<span class="kn">import</span> <span class="nn">MaterialX</span> <span class="k">as</span> <span class="nn">mx</span>
-<span class="kn">from</span> <span class="nn">materialxjson</span> <span class="kn">import</span> <span class="n">core</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display_markdown</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pkg_resources</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">MaterialX</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">materialxjson</span><span class="w"> </span><span class="kn">import</span> <span class="n">core</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_markdown</span>
 
 <span class="c1"># Create I/O handler</span>
 <span class="n">mtlxjson</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">MaterialXJson</span><span class="p">()</span>
@@ -8782,10 +8992,10 @@ standard_surface_default_mtlx_json.mtlx
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pkg_resources</span>
-<span class="kn">import</span> <span class="nn">MaterialX</span> <span class="k">as</span> <span class="nn">mx</span>
-<span class="kn">from</span> <span class="nn">materialxjson</span> <span class="kn">import</span> <span class="n">core</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display_markdown</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pkg_resources</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">MaterialX</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">materialxjson</span><span class="w"> </span><span class="kn">import</span> <span class="n">core</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_markdown</span>
 
 <span class="c1"># Create I/O handler</span>
 <span class="n">mtlxjson</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">MaterialXJson</span><span class="p">()</span>
