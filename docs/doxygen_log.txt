@@ -30,7 +30,7 @@ warning: Tag 'DOT_TRANSPARENT' at line 2630 of file 'Doxyfile' has become obsole
          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
 warning: tag INCLUDE_PATH: include path './src' does not exist
 warning: source './src' is not a readable file or directory... skipping.
-/Users/bernardkwok/work/materialxjson/README.md:134: warning: Reached end of file while still searching closing '`' of a verbatim block starting at line 88
+/Users/bernardkwok/work/materialxjson/README.md:137: warning: Reached end of file while still searching closing '`' of a verbatim block starting at line 91
 /Users/bernardkwok/work/materialxjson/README.md:1: warning: No matching directory found for command \dir /Users/bernardkwok/work/materialxjson/
 /Users/bernardkwok/work/materialxjson/src/materialxjson/core.py:19: warning: Member JSON_MIMETYPE_KEY (variable) of namespace materialxjson.core is not documented.
 /Users/bernardkwok/work/materialxjson/src/materialxjson/core.py:20: warning: Member JSON_MIMETYPE (variable) of namespace materialxjson.core is not documented.
