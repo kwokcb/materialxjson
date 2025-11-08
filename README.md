@@ -12,6 +12,9 @@ This is a Python package for supporting interoperability of  MaterialX documents
 
 The `JSON` representation is lossless and is targeted at integrations which prefer to use `JSON` as a data exchange format instead of `XML`.
 
+This will work against any version of `MaterialX
+1.39.0` or greater.
+
 ## Documentation
 
 Visit the **[home page](https://kwokcb.github.io/materialxjson/index.html)** for For further information about this package, including links to API documentation and a Jupyter notebook with sample code that expands on the basic *Usage* example.

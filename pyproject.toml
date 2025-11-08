@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "materialxjson"
-version = "1.39.3"
+version = "1.39.4"
 authors = [
   { name="Bernard Kwok", email="kwokcb@gmail.com" },
 ]
@@ -22,7 +22,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "materialx==1.39.3"
+    "materialx==1.39.4"
 ]
 
 [tool.setuptools.packages.find]

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['author_0',['Author',['../md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html#autotoc_md17',1,'']]]
+  ['author_0',['Author',['..//Users/bernardkwok/work/materialxjson/README.md#autotoc_md17',1,'']]]
 ];

@@ -376,13 +376,14 @@ code {
 <h2 id="introduction">Introduction</h2>
 <p>This is a Python package for supporting interoperability of  MaterialX documents by adding support conversion to / from a <code>JSON</code> representation.</p>
 <p>The <code>JSON</code> representation is lossless and is targeted at integrations which prefer to use <code>JSON</code> as a data exchange format instead of <code>XML</code>.</p>
+<p>This will work against any version of <code>MaterialX 1.39.0</code> or greater.</p>
 <h2 id="documentation">Documentation</h2>
 <p>Visit the <strong><a href="https://kwokcb.github.io/materialxjson/index.html">home page</a></strong> for For further information about this package, including links to API documentation and a Jupyter notebook with sample code that expands on the basic <em>Usage</em> example.</p>
 <h2 id="integrations">Integrations</h2>
-<p>A plugin using this package is available as a sample as part of QuilitX as of <strong>this change</strong><br>
+<p>A plugin using this package is available as a sample as part of QuilitX as of <strong>this change</strong>
 [https://github.com/PrismPipeline/QuiltiX/commit/e34ebfec22a334d323803b6797beb8db581ebb18].</p>
 <h2 id="installation">Installation</h2>
-<p>The Python package is losted on <strong><a href="https://pypi.org/project/materialxjson">PyPi</a></strong> and can be installed<br>
+<p>The Python package is losted on <strong><a href="https://pypi.org/project/materialxjson">PyPi</a></strong> and can be installed
 using `pip``:</p>
 <pre class="hljs"><code><div>pip install materialxjson
 </div></code></pre>
@@ -422,7 +423,7 @@ mtlxjson = core.MaterialXJson()
 <span class="hljs-comment"># Write to JSON format</span>
 jsonObject = mtlxjson.documentToJSON(doc)
 </div></code></pre>
-<p>The contents of the JSON object can be extracted out using the <code>json</code> package as follows. (An indentation level of <code>2</code> is<br>
+<p>The contents of the JSON object can be extracted out using the <code>json</code> package as follows. (An indentation level of <code>2</code> is
 used to make the output more readable.)</p>
 <pre class="hljs"><code><div><span class="hljs-comment"># Convert JSON object to JSON string</span>
 jsonString = core.Util.jsonToJSONString(jsonObject)
