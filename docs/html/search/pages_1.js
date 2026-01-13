@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['caveats_0',['Caveats',['..//Users/bernardkwok/work/materialxjson/README.md#autotoc_md16',1,'']]],
-  ['contents_1',['Contents',['..//Users/bernardkwok/work/materialxjson/README.md#autotoc_md7',1,'']]],
-  ['conversion_2',['Conversion',['..//Users/bernardkwok/work/materialxjson/README.md#autotoc_md15',1,'JSON to XML Format Conversion'],['..//Users/bernardkwok/work/materialxjson/README.md#autotoc_md14',1,'XML to JSON Format Conversion']]]
+  ['json_20i_20o_0',['MaterialX JSON I/O',['../md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html',1,'']]]
 ];

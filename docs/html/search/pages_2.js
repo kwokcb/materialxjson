@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['documentation_0',['Documentation',['../index.html#autotoc_md2',1,'Documentation'],['..//Users/bernardkwok/work/materialxjson/README.md#autotoc_md9',1,'Documentation']]]
+  ['materialx_20json_20i_20o_0',['MaterialX JSON I/O',['../md__d_1_2_work_2materialx_2materialxjson_2_r_e_a_d_m_e.html',1,'']]],
+  ['materialxjson_1',['MaterialXJSON',['../index.html',1,'']]]
 ];
