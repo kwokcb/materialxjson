@@ -6,8 +6,9 @@ def main() -> int:
     Main entry point
     '''
     argCount = len(sys.argv)
-    if sys.argv[1] == '-h' or sys.argv[1] == '--help':
+    if argCount < 2 or sys.argv[1] == '-h' or sys.argv[1] == '--help':
         print('Usage: materialxjson <command> [options] where command is j2m or m2j')
+        return 0
 
     # Check if the command is valid
     cmdArgs = sys.argv[1:]
