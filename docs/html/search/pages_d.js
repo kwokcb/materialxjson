@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['usage_0',['Usage',['..//Users/bernardkwok/work/materialxjson/README.md#autotoc_md12',1,'']]]
+  ['usage_0',['Usage',['../D:/Work/materialx/materialxjson/README.md#autotoc_md12',1,'']]]
 ];
